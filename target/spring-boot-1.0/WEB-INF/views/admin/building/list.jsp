@@ -208,7 +208,7 @@
 
                                             <div class="col-xs-5">
                                                 <label class="name">Tên quản lý</label>
-                                                <input type="text" class="form-control" name="manegerName" value="">
+                                                <input type="text" class="form-control" name="managerName" value="">
                                             </div>
                                             <div class="col-xs-5">
                                                 <label class="name">Số điện thoại quản lý</label>

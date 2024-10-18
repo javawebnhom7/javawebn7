@@ -3,11 +3,15 @@ package com.javaweb.entity;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
-
+import com.javaweb.entity.RentAreaEntity;
 
 @Entity
 @Table(name="building")
 public class BuildingEntity extends BaseEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     @Column(name = "name")
     private String name;
 
@@ -74,21 +78,27 @@ public class BuildingEntity extends BaseEntity {
     @Column(name = "note")
     private String note;
 
-
-
     @Column(name = "managername")
-    private String managername;
+    private String managerName;
 
     @Column(name = "managerphone")
-    private String managerphone;
+    private String managerPhone;
 
+    @OneToMany(mappedBy="building",fetch=FetchType.LAZY)
+    private List<RentAreaEntity> rentAreas= new ArrayList<>();
 
+    @ManyToMany(mappedBy = "buildings", fetch = FetchType.LAZY)
+    private List<UserEntity> users = new ArrayList<>();
 
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(name="assignmentbuilding",
-            joinColumns = @JoinColumn(name="buildingid",nullable = false),
-            inverseJoinColumns =@JoinColumn(name="staffid",nullable = false))
-    private List<UserEntity> userEntities=new ArrayList<UserEntity>();
+    @Override
+    public Long getId() {
+        return id;
+    }
+
+    @Override
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -266,27 +276,38 @@ public class BuildingEntity extends BaseEntity {
         this.note = note;
     }
 
-    public String getManagername() {
-        return managername;
+    public String getManagerName() {
+        return managerName;
     }
 
-    public void setManagername(String managername) {
-        this.managername = managername;
+    public void setManagerName(String managerName) {
+        this.managerName = managerName;
     }
 
-    public String getManagerphone() {
-        return managerphone;
+    public String getManagerPhone() {
+        return managerPhone;
     }
 
-    public void setManagerphone(String managerphone) {
-        this.managerphone = managerphone;
+    public void setManagerPhone(String managerPhone) {
+        this.managerPhone = managerPhone;
     }
 
-    public List<UserEntity> getUserEntities() {
-        return userEntities;
+
+
+    public List<UserEntity> getUsers() {
+        return users;
     }
 
-    public void setUserEntities(List<UserEntity> userEntities) {
-        this.userEntities = userEntities;
+    public void setUsers(List<UserEntity> users) {
+        this.users = users;
     }
+
+    public List<RentAreaEntity> getRentAreas() {
+        return rentAreas;
+    }
+
+    public void setRentAreas(List<RentAreaEntity> rentAreas) {
+        this.rentAreas = rentAreas;
+    }
+
 }

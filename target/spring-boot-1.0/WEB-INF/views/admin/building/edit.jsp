@@ -131,56 +131,55 @@
                             <div class="form-group">
                                 <label class="col-xs-3">Phường</label>
                                 <div class="col-xs-9">
-                                    <input class="form-control" type="text" id="ward" name="ward" value="">
+                                    <form:input class="form-control" path="ward"/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-xs-3">Đường</label>
                                 <div class="col-xs-9">
-                                    <input class="form-control" type="text" id="street" name="street" value="">
+                                    <form:input class="form-control" path="street"/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-xs-3">Kết cấu</label>
                                 <div class="col-xs-9">
-                                    <input class="form-control" type="text" id="structure" name="structure" value="">
+                                    <form:input class="form-control" path="typeCode"/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-xs-3">Số tầng hầm</label>
                                 <div class="col-xs-9">
-                                    <input class="form-control" type="number" id="numberofbasement"
-                                           name="numberofbasement" value="">
+                                    <form:input class="form-control" path="numberOfBasement"/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-xs-3">Diện tích sàn</label>
                                 <div class="col-xs-9">
-                                    <input class="form-control" type="number" id="floorarea" name="floorarea" value="">
+                                    <form:input class="form-control" path="floorArea"/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-xs-3">Hướng</label>
                                 <div class="col-xs-9">
-                                    <input class="form-control" type="text" id="direction" name="direction" value="">
+                                    <form:input class="form-control" path="direction"/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-xs-3">Hạng</label>
                                 <div class="col-xs-9">
-                                    <input class="form-control" type="text" id="level" name="level" value="">
+                                    <form:input class="form-control" path="level"/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-xs-3">Diện tích thuê</label>
                                 <div class="col-xs-9">
-                                    <input class="form-control" type="text" id="rentarea" name="rentarea" value="">
+                                    <form:input class="form-control" path="rentArea"/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-xs-3">Giá thuê</label>
                                 <div class="col-xs-9">
-                                    <input class="form-control" type="text" id="rentarice" name="rentarice" value="">
+                                    <form:input class="form-control" path="rentPrice"/>
                                 </div>
                             </div>
                             <div class="form-group">
