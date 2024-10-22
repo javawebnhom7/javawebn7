@@ -115,50 +115,6 @@
                 </div>
             </div>
         </div>
-        <!-- SEARCH -->
-        <div class="search">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 col-md-3">
-                        <div class="search-item">
-                            <p class="search-text">Chọn tỉnh/thành phố</p>
-                            <select class="search-option" name="search-option" id="search-option">
-                                <option value>- Tỉnh/thành phố</option>
-                                <option value="">TP.Hà Nội</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-3">
-                        <div class="search-item">
-                            <p class="search-text">Chọn quận/huyện</p>
-                            <select class="search-option" name="search-option" id="search-option">
-                                <option value>--Chọn quận--</option>
-                                <c:forEach var="item" items="${districts}">
-                                    <option value="">${item.value}</option>>
-                                        <%--<td>${item.value}</td>--%>
-                                </c:forEach>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-3">
-                        <div class="search-item">
-                            <p class="search-text">Chọn loại bất động sản</p>
-                            <select class="search-option" name="search-option" id="search-option">
-                                <option value>- Loại bất động sản</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-3 ">
-                        <div class="search-btn">
-                            <button class="search-btn-text">
-                                <i class="fa-solid fa-magnifying-glass search-btn-icon"></i>
-                                <span>Tìm kiếm nhanh</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <!-- CONTENT 1  -->
         <div class="content">
             <div class="content-title">
@@ -206,7 +162,7 @@
                                     </div>
                                     <div class="product1-footer">
                                         <span class="product1-footer-cost">2,5 Tỷ</span>
-                                        <button class="product1-footer-detail"><a href="./ChiTiet.html"
+                                        <button class="product1-footer-detail"><a href="/detailbuilding-1"
                                                                                   style="color:#fff">Xem chi
                                             tiết</a></button>
                                     </div>

@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class BuildingServiceImpl implements BuildingService {
@@ -41,5 +42,11 @@ public class BuildingServiceImpl implements BuildingService {
        responseDTO.setData(staffResponseDTOS);
        responseDTO.setMessage("success");
        return responseDTO;
+    }
+
+    @Override
+    public BuildingEntity getBuildingById(Long buildingId) {
+        Optional<BuildingEntity> building=buildingRepository.findById(buildingId);
+        return building.orElse(null);
     }
 }

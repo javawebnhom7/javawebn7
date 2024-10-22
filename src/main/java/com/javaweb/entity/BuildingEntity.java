@@ -82,6 +82,9 @@ public class BuildingEntity extends BaseEntity {
     @Column(name = "managerphone")
     private String managerphone;
 
+    @Column(name = "avatar")
+    private String avatar;
+
 
 
     @ManyToMany(fetch = FetchType.LAZY)
@@ -288,5 +291,13 @@ public class BuildingEntity extends BaseEntity {
 
     public void setUserEntities(List<UserEntity> userEntities) {
         this.userEntities = userEntities;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
+
+    public String getAvatar() {
+        return avatar;
     }
 }

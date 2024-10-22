@@ -1,12 +1,16 @@
 package com.javaweb.controller.web;
 
+import com.javaweb.entity.BuildingEntity;
 import com.javaweb.model.request.BuildingSearchRequest;
+import com.javaweb.service.BuildingService;
 import com.javaweb.utils.DistrictCode;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -17,6 +21,15 @@ import javax.servlet.http.HttpSession;
 
 @Controller(value = "homeControllerOfWeb")
 public class HomeController {
+  	@Autowired
+	BuildingService buildingService;
+	@GetMapping(value="/detailbuilding-{id}")
+	public ModelAndView detailBuiding(@PathVariable("id") Long id){
+		ModelAndView mav = new ModelAndView("web/detailbuilding");
+		BuildingEntity buildingEntity = buildingService.getBuildingById(id);
+		mav.addObject("building", buildingEntity);
+		return mav;
+	}
 
 	@RequestMapping(value = "/trang-chu", method = RequestMethod.GET)
 	public ModelAndView homePage(BuildingSearchRequest buildingSearchRequest, HttpServletRequest request) {
