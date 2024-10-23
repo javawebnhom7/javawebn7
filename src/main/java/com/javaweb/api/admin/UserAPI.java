@@ -1,9 +1,11 @@
 package com.javaweb.api.admin;
 
 import com.javaweb.constant.SystemConstant;
+import com.javaweb.entity.UserEntity;
 import com.javaweb.exception.MyException;
 import com.javaweb.model.dto.PasswordDTO;
 import com.javaweb.model.dto.UserDTO;
+import com.javaweb.repository.UserRepository;
 import com.javaweb.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -12,13 +14,22 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api/user")
 public class UserAPI {
-
+    @Autowired
+    private UserRepository userRepository;
     @Autowired
     private IUserService userService;
 
     @PostMapping
     public ResponseEntity<UserDTO> createUsers(@RequestBody UserDTO newUser) {
+        if(newUser.getRoleCode()==null){
+            newUser.setRoleCode("USER");
+        }
         return ResponseEntity.ok(userService.insert(newUser));
+    }
+
+    @PostMapping("/register")
+    public void createAccountInRegister(@RequestBody UserEntity newUser) {
+      userRepository.save(newUser);
     }
 
     @PutMapping("/{id}")

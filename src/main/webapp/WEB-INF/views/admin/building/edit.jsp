@@ -270,35 +270,7 @@
     });
 
 
-    $('#btnAddBuilding').click(function () {
-        var data = {}
-        var typeCode = [];
-        var formData = $('#form-edit').serializeArray();
-        $.each(formData, function (i, v) {
-            if (v.name != 'typeCode') {
-                data["" + v.name + ""] = v.value;
-            } else {
-                typeCode.push(v.value);
-            }
-        });
-        data['typeCode'] = typeCode;
-        console.log("OK")
-        //call api
-        $.ajax({
-            type: "POST",
-            url: "http://localhost:8080/api/building/",
-            data: JSON.stringify(data),
-            contentType: "application/json",
-            dataType: "JSON",
-            succsess: function (respond) {
-                console.log("Success");
-            },
-            error: function (respond) {
-                console.log("failed");
-                console.log(respond);
-            }
-        })
-    });
+
 
 
 </script>
