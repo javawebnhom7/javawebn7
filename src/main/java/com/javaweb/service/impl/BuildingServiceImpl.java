@@ -30,25 +30,25 @@ public class BuildingServiceImpl implements BuildingService {
 
     @Override
     public ResponseDTO listStaffs(Long buildingId) {
-       BuildingEntity building = buildingRepository.findById(buildingId).get();
-       List<UserEntity> staffs=userRepository.findByStatusAndRoles_Code(1,"STAFF");
-       List<UserEntity> staffAssignment= building.getUsers();
-       List<StaffResponseDTO> staffResponseDTOS=new ArrayList<>();
-       ResponseDTO responseDTO=new ResponseDTO();
-       for(UserEntity item:staffs){
-           StaffResponseDTO staffResponseDTO=new StaffResponseDTO();
-           staffResponseDTO.setFullName(item.getFullName());
-           staffResponseDTO.setStaffId(item.getId());
-           if(staffAssignment.contains(item)){
-               staffResponseDTO.setChecked("checked");
-           } else{
-               staffResponseDTO.setChecked("");
-           }
-           staffResponseDTOS.add(staffResponseDTO);
-       }
-       responseDTO.setData(staffResponseDTOS);
-       responseDTO.setMessage("success");
-       return responseDTO;
+        BuildingEntity building = buildingRepository.findById(buildingId).get();
+        List<UserEntity> staffs=userRepository.findByStatusAndRoles_Code(1,"STAFF");
+        List<UserEntity> staffAssignment= building.getUsers();
+        List<StaffResponseDTO> staffResponseDTOS=new ArrayList<>();
+        ResponseDTO responseDTO=new ResponseDTO();
+        for(UserEntity item:staffs){
+            StaffResponseDTO staffResponseDTO=new StaffResponseDTO();
+            staffResponseDTO.setFullName(item.getFullName());
+            staffResponseDTO.setStaffId(item.getId());
+            if(staffAssignment.contains(item)){
+                staffResponseDTO.setChecked("checked");
+            } else{
+                staffResponseDTO.setChecked("");
+            }
+            staffResponseDTOS.add(staffResponseDTO);
+        }
+        responseDTO.setData(staffResponseDTOS);
+        responseDTO.setMessage("success");
+        return responseDTO;
     }
 
     @Override
@@ -59,7 +59,7 @@ public class BuildingServiceImpl implements BuildingService {
             BuildingSearchResponse building = buildingSearchResponseConverter.toBuildingSearchResponse(item);
             result.add(building);
         }
-       return result;
+        return result;
     }
 
 

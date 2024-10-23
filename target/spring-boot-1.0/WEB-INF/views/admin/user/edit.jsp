@@ -69,6 +69,16 @@
                             </div>
                         </div>
                         <div class="space-4"></div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">
+                                <%--<spring:message code="label.fullname"/>--%>
+                               Mật khẩu
+                            </label>
+                            <div class="col-sm-9">
+                                <form:input path="password" id="password" cssClass="form-control"/>
+                            </div>
+                        </div>
+                        <div class="space-4"></div>
                         <!--Btn-->
                         <div class="col-sm-12">
                             <label class="col-sm-3 control-label no-padding-right message-info"></label>
@@ -108,7 +118,7 @@
             if (roleCode != '') {
                 updateUser(dataArray, $('#userId').val());
             } else {
-                window.location.href = "<c:url value='/admin/user-edit-"+userId+"?message=role_require'/>";
+                window.location.href = "<c:url value='/admin/user-edit?message=role_require'/>";
             }
         }
         else {

@@ -81,7 +81,7 @@
 <%--					</a></li>--%>
 					<security:authorize access = "isAnonymous()">
 						<li class><a class="inner-login" href="<c:url value='/login'/>" >Đăng nhập</a></li>
-
+                        <li class><a class="inner-login" href="<c:url value='/register'/>" >Đăng Ký</a></li>
 					</security:authorize>
 					<security:authorize access = "isAuthenticated()">
 						<li class="nav-item"><a class="inner-login" href="#"> <%=SecurityUtils.getPrincipal().getUsername()%></a></li>

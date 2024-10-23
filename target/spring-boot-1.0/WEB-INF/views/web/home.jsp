@@ -110,7 +110,7 @@
                                         </div>
                                         <div class="product1-footer">
                                             <span class="product1-footer-cost">2,5 Tỷ</span>
-                                            <button class="inner-login" value="${item.id}"><a href="./ChiTiet.html"
+                                            <button class="inner-login" value="${item.id}"><a href="detailbuilding-${item.id}"
                                                                                       style="color:#fff">Xem chi
                                                 tiết</a></button>
                                         </div>

@@ -84,6 +84,9 @@ public class BuildingEntity extends BaseEntity {
     @Column(name = "managerphone")
     private String managerPhone;
 
+    @Column(name = "avatar")
+    private String avatar;
+
     @OneToMany(mappedBy="building",fetch=FetchType.LAZY)
     private List<RentAreaEntity> rentAreas= new ArrayList<>();
 
@@ -310,4 +313,11 @@ public class BuildingEntity extends BaseEntity {
         this.rentAreas = rentAreas;
     }
 
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
 }

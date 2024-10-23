@@ -18,6 +18,9 @@ public class UserAPI {
 
     @PostMapping
     public ResponseEntity<UserDTO> createUsers(@RequestBody UserDTO newUser) {
+        if(newUser.getRoleCode()==null){
+            newUser.setRoleCode("USER");
+        }
         return ResponseEntity.ok(userService.insert(newUser));
     }
 
