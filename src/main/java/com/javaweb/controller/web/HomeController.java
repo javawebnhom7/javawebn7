@@ -68,6 +68,12 @@ public class HomeController {
 		return mav;
 	}
 
+	@GetMapping(value = "/register")
+	public ModelAndView dangKy(){
+		ModelAndView mav = new ModelAndView("register");
+		return mav;
+	}
+
 	@RequestMapping(value = "/access-denied", method = RequestMethod.GET)
 	public ModelAndView accessDenied() {
 		return new ModelAndView("redirect:/login?accessDenied");

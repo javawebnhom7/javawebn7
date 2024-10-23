@@ -9,7 +9,6 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<link href="style.css" rel="stylesheet" type="text/css" media="all"/>
 </head>
-<body id="LoginForm" style="background-color: #2c7659">
-    <dec:body/>
+<body>
 </body>
 </html>
