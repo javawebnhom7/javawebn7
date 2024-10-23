@@ -15,7 +15,7 @@
 }
 
 :root {
-  --primary-color: #35BF76;
+  --primary-color: #bf3535;
   --color-text: #434A6E;
 }
 
@@ -24,21 +24,7 @@ a{
   color: black;
 }
 
-.new::before {
-  content: "Mới đăng";
-  position: absolute;
-  background-color: #FB6B26;
-  width: 4.8rem;
-  height: 1.6rem;
-  border-radius: 8rem;
-  top: 0.8rem;
-  left: 0.8rem;
-  color: white;
-  font-size: 0.8rem;
-  text-align: center;
-  font-weight: 600;
-  line-height: 1.4rem;
-}
+
 
 .hot::before {
   content: "hot";
@@ -169,6 +155,8 @@ a{
 
 .search {
   background-color: var(--primary-color);
+  background-image: linear-gradient(90deg, rgba(255, 0, 0, 0), deepskyblue);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
   padding: 2rem 3rem;
   display: flex;
   justify-content: space-between;
@@ -183,14 +171,16 @@ a{
 
 .search-option {
   width: 100%;
-  height: 2.5rem;
-  border-radius: 0.4rem;
-  font-size: 0.8rem;
-  color: var(--color-text);
-  padding-left: 0.5rem;
+  height: 100%;
+  position: relative;
+  background: 0;
+  display: block;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
+  box-sizing: border-box;
+  padding: 10px 15px;
   cursor: pointer;
-  border: none;
-  outline: none;
 }
 
 .search-btn-text {
@@ -202,7 +192,6 @@ a{
   font-weight: 600;
   background-color: #25975A;
   width: 100%;
-  margin-top: 9.5%;
 }
 
 .search-btn-text:hover {
@@ -220,17 +209,9 @@ a{
 .title-cover {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-bottom: 4rem;
 }
 
-.title-cover::before {
-  content: "";
-  background: url(https://bizweb.dktcdn.net/100/328/362/themes/894751/assets/before_title.png?1664350964800) center / cover no-repeat;
-  width: 1.4rem;
-  height: 1.4rem;
-  margin-bottom: 0.4rem;
-}
+
 
 #title1 {
   color: var(--color-text);
@@ -238,13 +219,7 @@ a{
   font-weight: 700;
 }
 
-#title2 {
-  color: var(--color-text);
-  font-size: 0.9rem;
-  font-weight: 400;
-  letter-spacing: 0.05rem;
-  text-align: center;
-}
+
 
 .content-product, .content3-product {
   display: flex;
@@ -262,29 +237,19 @@ a{
   transition: box-shadow 0.4s 0.1s;
 }
 
-.product1,.product2 > div {
-  border: solid 0.063rem #2021242e;;
-}
+
 
 .product1-image {
   background: url(https://bizweb.dktcdn.net/thumb/grande/100/328/362/products/97493029.jpg?v=1534497006637) center / cover no-repeat;
   width: 100%;
-  height: 15.525rem;
-}
-.product2-image {
-  background: url(https://bizweb.dktcdn.net/thumb/grande/100/328/362/products/97493029.jpg?v=1534497006637) center / cover no-repeat;
-  width: 100%;
-  height: 15.525rem;
+  height: 12rem;
 }
 
-.product3-image {
-  background: url(https://bizweb.dktcdn.net/thumb/grande/100/328/362/products/97493029.jpg?v=1534497006637) center / cover no-repeat;
-  width: 100%;
-  height: 15.525rem;
-}
 
 .product1-conntent {
-  padding: 1.2rem 1.2rem 0.8rem;
+  padding-left: 8px;
+  padding-right: 8px;
+
 }
 
 .product1-conntent-header > a {
@@ -295,7 +260,7 @@ a{
 }
 
 .product1-conntent-header > a:hover {
-  color: var(--primary-color);
+  color: #3b3bed;
 }
 
 .product1-conntent-title {
@@ -318,6 +283,8 @@ a{
   font-size: 0.9rem;
   font-weight: 400;
   padding-bottom: 0.2rem;
+  color: #6c6c6cb8;
+
 }
 
 .product1-conntent-item > svg {
@@ -333,20 +300,13 @@ a{
 }
 
 .product1-footer-cost {
-  color: red;
-  font-size: 1.2rem;
+  color: #3b3bed;
+  font-size: 1.7rem;
   font-weight: 700;
   cursor: default;
+  font-family: fantasy;
 }
 
-.product1-footer-detail {
-  border: none;
-  background-color: var(--primary-color);
-  color: white;
-  font-size: 0.9rem;
-  padding: 0.4rem 1.2rem;
-  border-radius: 0.4rem;
-}
 
 .content3-title {
   font-size: 2rem;
@@ -662,6 +622,45 @@ h4 {
   width: 100%;
 }
 
+.inner-login{
+  text-decoration: none;
+  padding: 12px 15px;
+  border-radius: 50px;
+  cursor: pointer;
+  border: 0;
+  background-color: #dfdfdf;
+  box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+  letter-spacing: 1.5px;
 
+  font-size: 10px;
+  transition: all 0.5s ease;
+}
 
-
+.inner-login:hover {
+  text-decoration: none;
+  letter-spacing: 3px;
+  background-color: hsl(240, 83%, 58%);
+  color: hsl(0, 0%, 100%);
+  box-shadow: rgb(59, 59, 237) 0px 7px 29px 0px;
+}
+.inner-login:active {
+  letter-spacing: 3px;
+  background-color: hsl(240, 83%, 58%);
+  color: hsl(0, 0%, 100%);
+  box-shadow: rgb(48, 98, 191) 0px 0px 0px 0px;
+  transform: translateY(10px);
+  transition: 100ms;
+}
+a:hover{
+  text-decoration: none;
+}
+.inner-nhom7{
+  font-size: 25px;
+  font-weight: 800;
+  color: #00b1ff;
+  border: #0d6efd;
+}
+input::placeholder{
+  color: #fff;
+  font-style: italic;
+}
