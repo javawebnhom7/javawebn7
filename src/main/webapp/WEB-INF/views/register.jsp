@@ -19,7 +19,6 @@
 
             <div class="group">
                 <label class=" label" for="userName">Tên đầy đủ</label>
-<%--                <form:input class="input" path="fullName"/>--%>
                 <form:input class="input" path="fullName" value=""/>
             </div>
 

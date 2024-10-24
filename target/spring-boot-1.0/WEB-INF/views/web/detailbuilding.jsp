@@ -10,95 +10,95 @@
 <head>
 </head>
 <body>
-<div class="container" style="background-color: #f5f5f5;">
-    <h2 style="font-family: Courier, monospace;">Chi Tiết Tòa Nhà</h2>
+<div class="detail" style="background: #7db5ffcc">
+<div class="container" style="background-color: #f5f5f56e; padding: 60px">
+    <h2 style="font-family: Courier, monospace; border-bottom: solid 2px black; text-transform: capitalize">${building.name}</h2>
+    <br>
 
     <div class="row align-items-center">
-        <!-- Image on the left -->
         <div class="col-md-6 text-center">
-            <img src="${building.avatar}" alt="Building Image" class="building-image" style="max-width: 100%; height: auto;">
+            <img src="${building.avatar}" alt="Building Image" class="building-image" style="max-width: 100%; height: auto;
+box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 8px;">
         </div>
 
-        <!-- Content on the right -->
         <div class="col-md-6">
             <table style="font-family: Courier, monospace;" role="alert">
                 <tbody>
+
                 <tr>
-                    <th>Tên tòa nhà</th>
-                    <td>${building.name}</td>
+                    <th>Địa chỉ :</th>
+                    <td>Đường ${building.address}</td>
                 </tr>
                 <tr>
-                    <th>Địa chỉ</th>
-                    <td>${building.address}</td>
-                </tr>
-                <tr>
-                    <th>Số tầng hầm</th>
+                    <th>Số tầng hầm :</th>
                     <td>${building.numberOfBasement}</td>
                 </tr>
                 <tr>
-                    <th>Diện tích sàn</th>
+                    <th>Diện tích sàn :</th>
                     <td>${building.floorArea}m²</td>
                 </tr>
                 <tr>
-                    <th>Hướng</th>
+                    <th>Hướng :</th>
                     <td>${building.direction}</td>
                 </tr>
                 <tr>
-                    <th>Hạng</th>
+                    <th>Hạng :</th>
                     <td>${building.level}</td>
                 </tr>
                 <tr>
-                    <th>Giá thuê</th>
+                    <th>Giá thuê :</th>
                     <td>${building.rentPrice}đ</td>
                 </tr>
                 <tr>
-                    <th>Phí dịch vụ</th>
+                    <th>Phí dịch vụ :</th>
                     <td>${building.serviceFee}</td>
                 </tr>
                 <tr>
-                    <th>Phí gửi ôtô</th>
+                    <th>Phí gửi ôtô :</th>
                     <td>${building.carFee}</td>
                 </tr>
                 <tr>
-                    <th>Phí gửi xe máy</th>
+                    <th>Phí gửi xe máy :</th>
                     <td>${building.motoFee}</td>
                 </tr>
                 <tr>
-                    <th>Giá điện</th>
+                    <th>Giá điện :</th>
                     <td>${building.electricFee}</td>
                 </tr>
                 <tr>
-                    <th>Đặt cọc trước</th>
+                    <th>Đặt cọc trước :</th>
                     <td>${building.deposit}</td>
                 </tr>
                 <tr>
-                    <th>Chu kỳ đóng</th>
+                    <th>Chu kỳ đóng :</th>
                     <td>${building.payment}</td>
                 </tr>
                 <tr>
-                    <th>Thời gian thuê</th>
+                    <th>Thời gian thuê :</th>
                     <td>${building.rentTime}</td>
                 </tr>
                 <tr>
-                    <th>Loại hình</th>
+                    <th>Loại toà nhà :</th>
                     <td>${building.typeCode}</td>
                 </tr>
                 <tr>
-                    <th>Ghi chú</th>
+                    <th>Ghi chú :</th>
                     <td>${building.note}</td>
                 </tr>
                 <tr>
-                    <th>Tên quản lý</th>
+                    <th>Tên quản lý :</th>
                     <td>${building.managerName}</td>
                 </tr>
                 <tr>
-                    <th>SĐT quản lý</th>
+                    <th>SĐT quản lý :</th>
                     <td>${building.managerPhone}</td>
                 </tr>
                 </tbody>
             </table>
         </div>
     </div>
+</div>
 </div>
 </body>
 </html>

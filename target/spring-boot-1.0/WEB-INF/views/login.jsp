@@ -58,10 +58,9 @@
 				</div>
 				<p class="text-center text-muted mt-2 mb-0">Chưa có tài khoản ?
             		<a href="/register" class="fw-bold text-body">
-                <u style="color: white ;">Đăng ký tại đây </u>
-            </a>
-        </p>
-
+                		<u style="color: white ;">Đăng ký tại đây </u>
+            		</a>
+				</p>
 				</form>
 				<div class="d-flex justify-content-center text-center mt-2 pt-1">
 					<a href="#!" class="login-extension text-white"><i class="fab fa-facebook-f fa-lg"></i></a>

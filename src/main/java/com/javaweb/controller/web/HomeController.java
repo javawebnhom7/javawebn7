@@ -1,9 +1,11 @@
 package com.javaweb.controller.web;
 
+import com.javaweb.converter.BuildingDTOConverter;
 import com.javaweb.converter.BuildingSearchResponseConverter;
 import com.javaweb.entity.BuildingEntity;
 import com.javaweb.enums.District;
 import com.javaweb.enums.TypeCode;
+import com.javaweb.model.dto.BuildingDTO;
 import com.javaweb.model.dto.UserDTO;
 import com.javaweb.model.request.BuildingSearchRequest;
 import com.javaweb.model.response.BuildingSearchResponse;
@@ -26,18 +28,21 @@ import java.util.List;
 
 @Controller(value = "homeControllerOfWeb")
 public class HomeController {
-	@Autowired
-	private BuildingSearchResponseConverter buildingSearchResponseConverter;
-	@Autowired
+    @Autowired
 	private BuildingRepository buildingRepository;
 	@Autowired
 	private BuildingService buildingService;
 	@Autowired
 	private IUserService userService;
+    @Autowired
+    private BuildingDTOConverter buildingDTOConverter;
+    @Autowired
+    private BuildingSearchResponseConverter buildingSearchResponseConverter;
+
 	@RequestMapping(value = "/trang-chu", method = RequestMethod.GET)
 	public ModelAndView homePage(BuildingSearchRequest buildingSearchRequest, HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView("web/home");
-		mav.addObject("modelSearch", buildingSearchRequest);
+        mav.addObject("modelSearch", buildingSearchRequest);
 		List<BuildingSearchResponse> buildingEntities = buildingService.findAll(buildingSearchRequest);
 		mav.addObject("buildingList", buildingEntities);
 		mav.addObject("listStaffs",userService.getStaffs());
@@ -54,31 +59,6 @@ public class HomeController {
 		mav.addObject("building", buildingSearchResponse);
 		return mav;
 	}
-
-	@GetMapping(value="/gioi-thieu")
-	public ModelAndView introducceBuiding(){
-		ModelAndView mav = new ModelAndView("web/introduce");
-		return mav;
-	}
-
-	@GetMapping(value="/san-pham")
-	public ModelAndView buidingList(){
-		ModelAndView mav = new ModelAndView("/web/list");
-		return mav;
-	}
-
-	@GetMapping(value="/tin-tuc")
-	public ModelAndView news(){
-		ModelAndView mav = new ModelAndView("/web/news");
-		return mav;
-	}
-
-	@GetMapping(value="/lien-he")
-	public ModelAndView contact(){
-		ModelAndView mav = new ModelAndView("/web/contact");
-		return mav;
-	}
-
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public ModelAndView login() {
 		ModelAndView mav = new ModelAndView("login");

@@ -66,6 +66,7 @@
                                                 <i class="ace-icon fa fa-chevron-up"></i>
                                             </a>
                                         </div>
+
                                     </div>
                                     <div class="widget-body">
                                         <div class="widget-main">

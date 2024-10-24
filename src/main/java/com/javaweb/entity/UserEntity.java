@@ -42,12 +42,6 @@ public class UserEntity extends BaseEntity {
     private List<BuildingEntity> buildings = new ArrayList<>();
 
 
-//    @OneToMany(mappedBy="staffs", fetch = FetchType.LAZY)
-//    private List<AssignmentBuildingEntity> assignmentBuildingEntities = new ArrayList<>();
-//
-//    @OneToMany(mappedBy="users", fetch = FetchType.LAZY)
-//    private List<UserRoleEntity> userRoleEntities = new ArrayList<>();
-
     public static long getSerialVersionUID() {
         return serialVersionUID;
     }
@@ -100,7 +94,8 @@ public class UserEntity extends BaseEntity {
     public void setEmail(String email) {
         this.email = email;
     }
-        @Override
+
+    @Override
     public Long getId() {
         return id;
     }

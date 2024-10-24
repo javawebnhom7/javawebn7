@@ -59,8 +59,7 @@
                         <!--Btn-->
                         <div class="col-sm-12">
                                 <label class="col-sm-3 control-label no-padding-right message-info"></label>
-                                <input type="button" class="btn btn-white btn-warning btn-bold"
-                                       value="Cập nhật người dùng" id="btnUpdateUser"/>
+
                         </div>
                         <!--Btn-->
                         <form:hidden path="id" id="userId"/>
@@ -70,33 +69,6 @@
             </div>
         </div>
     </div>
-    <script>
-        $("#btnUpdateUser").click(function (event) {
-            event.preventDefault();
-            var dataArray = {};
-            dataArray["fullName"] = $('#fullName').val();
-            if ($('#userId').val() != "") {
-                updateInfo(dataArray, $('#userName').val());
-            }
-        });
-
-        function updateInfo(data, username) {
-            $.ajax({
-                url: '${formUrl}/profile/' + username,
-                type: 'PUT',
-                dataType: 'json',
-                contentType: 'application/json',
-                data: JSON.stringify(data),
-                success: function (res) {
-                    window.location.href = "<c:url value='/admin/profile/"+res.userName+"?message=update_success'/>";
-                },
-                error: function (res) {
-                    console.log(res);
-                    window.location.href = "<c:url value='/admin/profile/"+username+"?message=error_system'/>";
-                }
-            });
-        }
-    </script>
 </div>
 </body>
 </html>

@@ -7,16 +7,22 @@
 .nav-item {
   color: black;
 }
+body{
+  font-size: 18px;
+  background: url(https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg?cs=srgb&dl=pexels-expect-best-79873-323705.jpg&fm=jpg) center /cover no-repeat fixed;
+  background-color: #0d6efd;
+}
 
 *{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Dancing Script", cursive;
+  font-size:18px ;
 }
-
 :root {
-  --primary-color: #bf3535;
-  --color-text: #434A6E;
+  --primary-color: #3d68f6;
+  --color-text: #273aa1;
 }
 
 a{
@@ -230,9 +236,11 @@ a{
 
 .product1-conntent-header > a {
   color: var(--color-text);
-  font-size: 1rem;
+  font-size: 20px;
   font-weight: 700;
   letter-spacing: 0.03rem;
+  text-transform: capitalize;
+
 }
 
 .product1-conntent-header > a:hover {
@@ -259,7 +267,7 @@ a{
   font-size: 0.9rem;
   font-weight: 400;
   padding-bottom: 0.2rem;
-  color: #6c6c6cb8;
+  color: rgba(0, 0, 0, 0.72);
 
 }
 
@@ -276,11 +284,11 @@ a{
 }
 
 .product1-footer-cost {
-  color: #3b3bed;
-  font-size: 1.7rem;
+  color: #f3375b;
+  font-size: 1.3rem;
   font-weight: 700;
   cursor: default;
-  font-family: Serif;
+
 }
 
 
@@ -459,7 +467,7 @@ h4 {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
-  margin-top: 30px;
+  /*margin-top: 30px;*/
   color: #fff;
 }
 
@@ -609,7 +617,7 @@ h4 {
   box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
   letter-spacing: 1.5px;
 
-  font-size: 10px;
+  font-size: 14px;
   transition: all 0.5s ease;
 }
 
@@ -637,6 +645,11 @@ a:hover{
   font-weight: 800;
   color: #00b1ff;
 }
+.inner-nhom7 i{
+  font-size: 40px;
+  font-weight: 800;
+  color: #00b1ff;
+}
 .inner-nhom7:hover {
   font-size: 25px;
   font-weight: 800;
@@ -646,4 +659,12 @@ a:hover{
 input::placeholder{
   color: #fff;
   font-style: italic;
+}
+th{
+  display: flex;
+
+  font-size: 20px;
+}
+td{
+  font-size: 20px;
 }

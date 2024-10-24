@@ -25,7 +25,6 @@ public class BuildingDTO extends AbstractDTO{
     private String rentTime;
     private String decorTime;
     private Integer brokerageFee;
-//    private String typeCode;
     private String note;
     private String managerName;
     private String managerPhone;

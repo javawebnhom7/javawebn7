@@ -58,6 +58,7 @@ public class BuildingController {
         mav.addObject("typeCodes", TypeCode.type());
         return mav;
     }
+
     @RequestMapping(value="/admin/building-edit-{id}",method = RequestMethod.GET)
     public ModelAndView buildingEdit(@PathVariable("id") Long Id , HttpServletRequest request){
         ModelAndView mav = new ModelAndView("admin/building/edit");

@@ -13,8 +13,11 @@
 </head>
 
 <body>
+<div class="blurred-box">
 
-<div class="page-wrapper">
+<div class="page-wrapper" style="
+    background: #7db5ffcc;
+">
     <div class="">
         <%--  SEARCH--%>
         <div class="search">
@@ -77,7 +80,7 @@
             <div class="content-title">
                 <div class="container">
                     <div class="title-cover">
-                        <span id="title1" style="font-family: Fahkwang">Dự án toà nhà cho thuê</span>
+                        <span id="title1">Dự án toà nhà cho thuê</span>
                     </div>
                 </div>
 
@@ -110,7 +113,7 @@
                                             </ul>
                                         </div>
                                         <div class="product1-footer">
-                                            <span class="product1-footer-cost">2,5 Tỷ</span>
+                                            <span class="product1-footer-cost">${item.rentPrice}</span>
                                             <button class="inner-login" ><a href="detailbuilding-${item.id}">
                                             Xem chi tiết</a></button>
                                         </div>
@@ -134,15 +137,12 @@
                         <p class="desc-logo-footer mt-3">Nguyễn Hữu Trường - B22DCKH131</p>
                         <p class="desc-logo-footer mt-3">Lê Văn Thọ - B22DCKH131</p>
                         <p class="desc-logo-footer mt-3">Nguyễn Thành Trung - B22DCKH131</p>
-
                     </div>
                     <div class="text-center">
                         <div class="border-bottom mb-5 mt-4"></div>
                     </div>
                 </div>
-
             </div>
-
         </footer>
     </div>
 </div>
