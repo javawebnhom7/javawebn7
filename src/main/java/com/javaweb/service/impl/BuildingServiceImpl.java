@@ -3,7 +3,6 @@ package com.javaweb.service.impl;
 import com.javaweb.converter.BuildingSearchResponseConverter;
 import com.javaweb.entity.BuildingEntity;
 import com.javaweb.entity.UserEntity;
-import com.javaweb.model.dto.BuildingDTO;
 import com.javaweb.model.request.BuildingSearchRequest;
 import com.javaweb.model.response.BuildingSearchResponse;
 import com.javaweb.model.response.ResponseDTO;
@@ -13,10 +12,10 @@ import com.javaweb.repository.BuildingRepository;
 import com.javaweb.repository.UserRepository;
 import com.javaweb.service.BuildingService;
 
+import com.javaweb.service.RentAreaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -27,6 +26,9 @@ public class BuildingServiceImpl implements BuildingService {
     private BuildingRepository buildingRepository;
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private RentAreaService rentAreaService;
 
     @Override
     public ResponseDTO listStaffs(Long buildingId) {
@@ -60,6 +62,15 @@ public class BuildingServiceImpl implements BuildingService {
             result.add(building);
         }
         return result;
+    }
+
+    @Override
+    public void deleteBuildings(List<Long> ids) {
+        rentAreaService.deleteByBuildings(ids);
+
+        for(Long id : ids){
+            buildingRepository.deleteById(id);
+        }
     }
 
 

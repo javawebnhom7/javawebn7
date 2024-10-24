@@ -11,5 +11,5 @@ import java.util.List;
 public interface BuildingService {
    ResponseDTO listStaffs(Long buildingId);
    List<BuildingSearchResponse> findAll(BuildingSearchRequest buildingSearchRequest);
-
+   void deleteBuildings(List<Long> ids);
 }

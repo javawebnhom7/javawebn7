@@ -69,21 +69,36 @@
                             </div>
                         </div>
                         <div class="space-4"></div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">
+                                <%--<spring:message code="label.username"/>--%> Mật khẩu
+                            </label>
+                            <div class="col-sm-9">
+                                <c:if test="${not empty model.id}">
+                                    <form:input path="password" id="userName" cssClass="form-control" type="password"/>
+                                </c:if>
+                                <c:if test="${empty model.id}">
+                                    <form:input path="password" id="userName" cssClass="form-control" type="password"/>
+                                </c:if>
+                            </div>
+                        </div>
                         <!--Btn-->
                         <div class="col-sm-12">
                             <label class="col-sm-3 control-label no-padding-right message-info"></label>
+
                             <c:if test="${not empty model.id}">
                                 <input type="button" class="btn btn-white btn-warning btn-bold"
                                        value="Cập nhật người dùng" id="btnAddOrUpdateUsers"/>
-                                <input type="button" class="btn btn-white btn-warning btn-bold"
-                                       value="Reset mật khẩu" id="btnResetPassword"/>
                                 <img src="/img/loading.gif" style="display: none; height: 100px" id="loading_image">
                             </c:if>
+
+
                             <c:if test="${empty model.id}">
                                 <input type="button" class="btn btn-white btn-warning btn-bold"
                                        value="Thêm mới người dùng" id="btnAddOrUpdateUsers"/>
                                 <img src="/img/loading.gif" style="display: none; height: 100px" id="loading_image">
                             </c:if>
+
                         </div>
                         <!--Btn-->
                         <form:hidden path="id" id="userId"/>

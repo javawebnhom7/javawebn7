@@ -3,7 +3,6 @@ package com.javaweb.entity;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
-import com.javaweb.entity.RentAreaEntity;
 
 @Entity
 @Table(name="building")
@@ -87,8 +86,9 @@ public class BuildingEntity extends BaseEntity {
     @Column(name = "avatar")
     private String avatar;
 
-    @OneToMany(mappedBy="building",fetch=FetchType.LAZY)
+    @OneToMany(mappedBy="building",fetch=FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE},orphanRemoval = true)
     private List<RentAreaEntity> rentAreas= new ArrayList<>();
+
 
     @ManyToMany(mappedBy = "buildings", fetch = FetchType.LAZY)
     private List<UserEntity> users = new ArrayList<>();

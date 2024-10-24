@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 @Component
@@ -17,13 +19,19 @@ public class BuildingSearchResponseConverter {
     @Autowired
     private ModelMapper modelMapper;
 
-    public BuildingSearchResponse toBuildingSearchResponse(BuildingEntity k) {
-        BuildingSearchResponse buildingSearchResponse = modelMapper.map(k, BuildingSearchResponse.class);
+    public BuildingSearchResponse toBuildingSearchResponse(BuildingEntity buildingEntity){
+        BuildingSearchResponse buildingSearchResponse = modelMapper.map(buildingEntity, BuildingSearchResponse.class);
 
-        List<RentAreaEntity> rentAreaEntities = k.getRentAreas();
+        List<RentAreaEntity> rentAreaEntities = buildingEntity.getRentAreas();
         String rentarea = rentAreaEntities.stream().map(it -> it.getValue().toString()).collect(Collectors.joining(","));
-
-        buildingSearchResponse.setAddress(k.getStreet() + ", " + k.getWard() + ", "+ District.valueOf(k.getDistrict()).getDistrictName());
+        Map<String, String > districts = District.type();
+        String districtName = "";
+        if(buildingEntity.getDistrict() != null && !Objects.equals(buildingEntity.getDistrict(), "")){
+            districtName = districts.get(buildingEntity.getDistrict());
+        }
+        if(districtName != null && !Objects.equals(districtName, "")){
+            buildingSearchResponse.setAddress(buildingEntity.getStreet() + ", " + buildingEntity.getWard() + ", "+ District.valueOf(buildingEntity.getDistrict()).getDistrictName());
+        }
         buildingSearchResponse.setRentArea(rentarea);
 
         return buildingSearchResponse;

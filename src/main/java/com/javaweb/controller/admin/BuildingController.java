@@ -46,7 +46,6 @@ public class BuildingController {
         mav.addObject("modelSearch",buildingSearchRequest);
         List<BuildingSearchResponse> responseList=buildingService.findAll(buildingSearchRequest);
         mav.addObject("buildingList",responseList);
-        mav.addObject("listStaffs",userService.getStaffs());
         mav.addObject("districts", District.type());
         mav.addObject("typeCodes", TypeCode.type());
         return mav;

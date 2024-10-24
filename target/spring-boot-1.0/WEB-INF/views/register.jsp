@@ -5,75 +5,56 @@
     <title>Đăng ký</title>
 </head>
 <body>
-<section class="vh-100 gradient-custom form-register">
-    <div class="container">
-        <div class="row d-flex justify-content-center align-items-center h-100">
-            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-                <div class="card text-white" style="border-radius: 1rem; background-color: #35bf76;">
-                    <div class="card-body p-2 px-5 text-center">
-                        <div class="md-5 md-4 mt-4 pb-2">
-                            <h2 class="fw-bold mb-2 text-uppercase">Create an account</h2>
-                            <p class="text-white-50 mb-2">Please enter your Information</p>
-                            <form:form modelAttribute="registerAdd" id="registerForm" method="GET">
-                                <div class="col-xs-12">
-                                    <form class="form-horizontal" role="form">
-                                        <div class="form-group">
-                                            <label class="col-xs-12">Fullname</label>
-                                            <div class="col-xs-12">
-                                                <form:input class="form-control" path="fullName"/>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-xs-12">Username</label>
-                                            <div class="col-xs-12">
-                                                <form:input class="form-control" path="userName"/>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-xs-12">Password</label>
-                                            <div class="col-xs-12">
-                                                <form:input class="form-control" path="password"/>
-                                            </div>
-                                        </div>
+<div class="container">
+    <div class="login-wrap">
+        <form:form modelAttribute="registerAdd" id="registerForm" method="GET" class="login-html">
+        <c:if test="${param.duplicateAccount != null}">
+            <div class="alert alert-warning">Account already exists. Please use a different email or username.</div>
+        </c:if>
+        <c:if test="${param.registrationSuccess != null}">
+            <div class="alert alert-success">Registration successful! Welcome aboard!</div>
+        </c:if>
+            <h2 class="fw-bold mb-2 text-uppercase">Đăng ký</h2>
+            <p class="text-white-50 mb-2">Hãy nhập thông tin của bạn !</p>
 
-
-
-                                        <div class="form-group">
-
-                                            <div class="col-xs-12">
-
-                                               <button type="button" class="btn btn-primary" id="registerBtn">
-                                                    Register
-                                                    </button>
-
-                                            </div>
-                                        </div>
-
-                                    </form>
-                                </div>
-                            </form:form>
-
-
-                            <div class="d-flex justify-content-center text-center mt-2 pt-1">
-                                <a href="#!" class="login-extension text-white"><i
-                                        class="fab fa-facebook-f fa-lg"></i></a>
-                                <a href="#!" class="login-extension text-white"><i
-                                        class="fab fa-twitter fa-lg mx-4 px-2"></i></a>
-                                <a href="#!" class="login-extension text-white"><i
-                                        class="fab fa-google fa-lg"></i></a>
-                            </div>
-
-                            <p class="text-center text-muted mt-2 mb-0">Have already an account? <a href="/login"
-                                                                                                    class="fw-bold text-body"><u
-                                    style="color: white ;">Login here</u></a></p>
-
-
-                        </div>
-                    </div>
-                </div>
+            <div class="group">
+                <label class=" label" for="userName">Tên đầy đủ</label>
+<%--                <form:input class="input" path="fullName"/>--%>
+                <form:input class="input" path="fullName" value=""/>
             </div>
+
+        <div class="group">
+            <label class="label">Username</label>
+            <form:input class="input" path="userName" value=""/>
         </div>
-    </div>
+        <div class="group">
+            <label class="label" for="password">Mật khẩu</label>
+            <form:input class="input" path="password" value="" type="password"/>
+        </div>
+
+        <div class="group" style="display: flex; justify-content: center">
+                <button type="submit" class="button6" id="registerBtn">
+                    Register
+                </button>
+        </div>
+        <div class="d-flex justify-content-center text-center mt-2 pt-1">
+            <a href="#!" class="login-extension text-white"><i
+                    class="fab fa-facebook-f fa-lg"></i></a>
+            <a href="#!" class="login-extension text-white"><i
+                    class="fab fa-twitter fa-lg mx-4 px-2"></i></a>
+            <a href="#!" class="login-extension text-white"><i
+                    class="fab fa-google fa-lg"></i></a>
+        </div>
+
+        <p class="text-center text-muted mt-2 mb-0">Đã có tài khoản?
+            <a href="/login" class="fw-bold text-body">
+                <u style="color: white ;">Đăng nhập tại đây</u>
+            </a>
+        </p>
+
+    </form:form>
+</div>
+</div>
 </section>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>

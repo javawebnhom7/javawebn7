@@ -1,8 +1,11 @@
 package com.javaweb.controller.web;
 
+import com.javaweb.converter.BuildingDTOConverter;
+import com.javaweb.converter.BuildingSearchResponseConverter;
 import com.javaweb.entity.BuildingEntity;
 import com.javaweb.enums.District;
 import com.javaweb.enums.TypeCode;
+import com.javaweb.model.dto.BuildingDTO;
 import com.javaweb.model.dto.UserDTO;
 import com.javaweb.model.request.BuildingSearchRequest;
 import com.javaweb.model.response.BuildingSearchResponse;
@@ -31,6 +34,11 @@ public class HomeController {
 	private BuildingService buildingService;
 	@Autowired
 	private IUserService userService;
+    @Autowired
+    private BuildingDTOConverter buildingDTOConverter;
+    @Autowired
+    private BuildingSearchResponseConverter buildingSearchResponseConverter;
+
 	@RequestMapping(value = "/trang-chu", method = RequestMethod.GET)
 	public ModelAndView homePage(BuildingSearchRequest buildingSearchRequest, HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView("web/home");
@@ -47,6 +55,7 @@ public class HomeController {
 	public ModelAndView detailBuiding(@PathVariable("id") Long id){
 		ModelAndView mav = new ModelAndView("web/detailbuilding");
 		BuildingEntity buildingEntity =buildingRepository.findById(id).get();
+
 		mav.addObject("building", buildingEntity);
 		return mav;
 	}

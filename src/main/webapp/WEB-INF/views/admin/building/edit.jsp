@@ -77,12 +77,12 @@
                                     <form:input class="form-control" path="street"/>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label class="col-xs-2">Kết cấu</label>
-                                <div class="col-xs-10">
-                                    <form:input class="form-control" path="typeCode"/>
-                                </div>
-                            </div>
+<%--                            <div class="form-group">--%>
+<%--                                <label class="col-xs-2">Kết cấu</label>--%>
+<%--                                <div class="col-xs-10">--%>
+<%--                                    <form:input class="form-control" />--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
                             <div class="form-group">
                                 <label class="col-xs-2">Số tầng hầm</label>
                                 <div class="col-xs-10">
@@ -122,10 +122,68 @@
                             <div class="form-group">
                                 <label class="col-xs-2">Mô tả giá</label>
                                 <div class="col-xs-10">
-                                    <input class="form-control" type="text" id="motagia" name="motatgia" value="">
+                                    <form:input class="form-control" path="rentPriceDescription"/>
                                 </div>
                             </div>
-
+                            <div class="form-group">
+                                <label class="col-xs-2">Dịch vụ phí</label>
+                                <div class="col-xs-10">
+                                    <form:input class="form-control" path="serviceFee"/>
+                                </div>
+                            </div><div class="form-group">
+                                <label class="col-xs-2">Phí ô tô</label>
+                                <div class="col-xs-10">
+                                    <form:input class="form-control" path="carFee"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-xs-2">Phí xe máy </label>
+                                <div class="col-xs-10">
+                                    <form:input class="form-control" path="motoFee"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-xs-2">Đặt cọc</label>
+                                <div class="col-xs-10">
+                                    <form:input class="form-control" path="deposit"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-xs-2">Thanh toán</label>
+                                <div class="col-xs-10">
+                                    <form:input class="form-control" path="payment"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-xs-2">Thời hạn thuê</label>
+                                <div class="col-xs-10">
+                                    <form:input class="form-control" path="rentTime"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-xs-2">Tên quản lý</label>
+                                <div class="col-xs-10">
+                                    <form:input class="form-control" path="managerName"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-xs-2">SĐT quản lý</label>
+                                <div class="col-xs-10">
+                                    <form:input class="form-control" path="managerPhone"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-xs-2">Gán link ảnh toà nhà</label>
+                                <div class="col-xs-10">
+                                    <form:input class="form-control" path="avatar"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-xs-2">Ghi chú</label>
+                                <div class="col-xs-10">
+                                    <form:input class="form-control" path="note"/>
+                                </div>
+                            </div>
                             <div class="form-group">
                                 <label class="col-xs-2">Loại tòa nhà</label>
                                 <div class="col-xs-9">
@@ -137,14 +195,14 @@
                                 <div class="col-xs-9" style="padding-bottom: 8px">
                                     <c:if test="${not empty buildingEdit.id}">
                                         <button type="button" class="btn btn-primary" id="btnAddOrBuilding"
-                                        style="margin-right: 8px">
+                                        style="margin-right: 8px" >
                                             Cập nhật tòa nhà
                                         </button>
                                         <button type="button" class="btn btn-primary" id="btnCancel">Hủy thao tác
                                         </button>
                                     </c:if>
                                     <c:if test="${empty buildingEdit.id}">
-                                        <button type="button" class="btn btn-primary" id="btnAddOrBuilding"
+                                        <button type="submit" class="btn btn-primary" id="btnAddOrBuilding"
                                          style="margin-right: 8px">
                                             Thêm tòa nhà
                                         </button>
@@ -180,6 +238,7 @@
         data['typeCode'] = typeCode;
         if (typeCode != "") {
             addOrUpdateBuilding(data);
+            window.location.href = "<c:url value="/admin/building-list"/>";
         } else {
             window.location.href = "<c:url value="/admin/building-edit?typeCode=require"/>";
         }
@@ -238,7 +297,6 @@
             }
         })
     });
-
 
 </script>
 </body>

@@ -64,30 +64,6 @@ a{
   }
 }
 
-.vip::before {
-  content: "vip";
-  position: absolute;
-  background-color: #FFC321;
-  right: 0.6rem;
-  width: 3rem;
-  height: 2.6rem;
-  text-align: center;
-  text-transform: uppercase;
-  color: white;
-  font-weight: 700;
-  line-height: 2rem;
-  animation: 0.5s linear 1s infinite reverse flicker;
-}
-
-.vip::after {
-  content: "";
-  position: absolute;
-  top: 1.6rem;
-  right: 0.6rem;
-  border: 1rem solid;
-  border-width: 1rem 1.5rem;
-  border-color: transparent #FFC321;
-}
 
 /* ************************************************* */
 .carousel-item{
@@ -304,7 +280,7 @@ a{
   font-size: 1.7rem;
   font-weight: 700;
   cursor: default;
-  font-family: fantasy;
+  font-family: Serif;
 }
 
 
@@ -628,6 +604,7 @@ h4 {
   border-radius: 50px;
   cursor: pointer;
   border: 0;
+  /*color: black;*/
   background-color: #dfdfdf;
   box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
   letter-spacing: 1.5px;
@@ -653,12 +630,18 @@ h4 {
 }
 a:hover{
   text-decoration: none;
+  color: #fff;
 }
 .inner-nhom7{
   font-size: 25px;
   font-weight: 800;
   color: #00b1ff;
-  border: #0d6efd;
+}
+.inner-nhom7:hover {
+  font-size: 25px;
+  font-weight: 800;
+  color: #23ae81;
+
 }
 input::placeholder{
   color: #fff;

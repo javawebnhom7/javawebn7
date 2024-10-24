@@ -137,29 +137,21 @@
                                         </div>
                                         <div class="form-group">
                                             <div class="col-xs-12">
-
-                                                <div class="col-xs-4">
+                                                <div class="col-xs-6">
                                                     <label class="name">Tên quản lý</label>
                                                     <form:input class="form-control" path="managerName"/>
                                                 </div>
-                                                <div class="col-xs-5">
+                                                <div class="col-xs-6">
                                                     <label class="name">Số điện thoại quản lý</label>
                                                     <form:input class="form-control" path="managerPhone"/>
                                                 </div>
-                                                <div class="col-xs-3">
-                                                    <label class="name">Nhân viên</label>
-                                                    <form:select class="form-control" path="staffId">
-                                                        <form:option value="">---Chọn nhân viên phụ trách---</form:option>
-                                                        <form:options items="${listStaffs}"/>
 
-
-                                                    </form:select>
-                                                </div>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="col-xs-12">
                                                 <div class="col-xs-9">
+                                                <label class="name">Loại toà nhà</label>
                                                     <form:checkboxes items="${typeCodes}" path="typeCode"/>
                                                 </div>
                                             </div>
@@ -202,8 +194,8 @@
                                 </button>
                             </a>
 
-                            <%--                            </a>--%>
-                            <button class="bn633-hover bn26" title="Xoá toà nhà" id="btnDeleteBuilding">
+                                <a href="/admin/building-list">
+                            <button class="bn633-hover bn26" title="Xoá toà nhà" id="btnDeleteBuilding" type="button">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                      fill="currentColor" class="bi bi-building-fill-x" viewBox="0 0 16 16">
                                     <path
@@ -214,6 +206,7 @@
                                     </path>
                                 </svg>
                             </button>
+                                </a>
                         </div>
                     </div>
 
@@ -263,7 +256,7 @@
 
 
                             <td>
-                                    <a href="#">${item.name}</a>
+                                    <a href="/detailbuilding-${item.id}">${item.name}</a>
                                 </td>
                             <td>${item.address}</td>
                             <td>${item.numberOfBasement}</td>
@@ -275,31 +268,21 @@
                             <td>${item.serviceFee}</td>
                             <td>
                                 <div class="hidden-sm hidden-xs btn-group">
-<%--                                    <button class="btn btn-xs btn-success" title="Giao tòa nhà"--%>
-<%--                                            onclick="assignmentBuilding(${item.id})">--%>
-<%--                                        <i class="ace-icon fa fa-check bigger-120"></i>--%>
-<%--                                    </button>--%>
 
-<%--                                    <a href="/admin/building-edit-${item.id}" class="btn btn-xs btn-info"--%>
-<%--                                       title="Sửa tòa nhà">--%>
-
-<%--                                        <i class="ace-icon fa fa-pencil bigger-120"></i>--%>
-
-<%--                                    </a>--%>
                                         <a  title="Sửa tòa nhà"
                                            href="/admin/building-edit-${item.id}">
                                            <button class="btn-xs bn632-hover bn26" title="Sửa toà nhà" style="width: 25px; height: 25px"
-                                                onclick="deleteBuilding(${item.id})">
+                                                onclick="(${item.id})">
                                             <i class="fa-solid fa-pencil"></i>
                                         </button>
                                         </a>
-<%--                                         <a  title="Xoá tòa nhà"--%>
-<%--                                           href="/admin/building-list">--%>
+                                        <a  title="Xoá tòa nhà"
+                                           href="/admin/building-list">
                                         <button class="btn-xs bn633-hover bn26" title="Xoá toà nhà" style="width: 25px; height: 25px"
                                                 onclick="deleteBuilding(${item.id})">
                                             <i class="fa-solid fa-building-circle-xmark"></i>
                                         </button>
-<%--                                        </a>--%>
+                                        </a>
 
 
 

@@ -31,10 +31,8 @@ public class BuildingDTOtoEntityConverter {
         }
         buildingEntity.setRentAreas(rentAreaEntities);
 
-
-        String typeCode= dto.getTypeCode().stream().map(it -> it).collect(Collectors.joining(","));
-        buildingEntity.setTypeCode(typeCode.substring(1));
-
+        String s= String.join( ",", dto.getTypeCode());
+        buildingEntity.setTypeCode(s);
         return buildingEntity;
     }
 }
