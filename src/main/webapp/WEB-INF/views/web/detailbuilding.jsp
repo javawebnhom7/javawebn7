@@ -29,7 +29,7 @@
                 </tr>
                 <tr>
                     <th>Địa chỉ</th>
-                    <td>Đường ${building.street}, Phường ${building.ward}, Quận ${building.district}</td>
+                    <td>${building.address}</td>
                 </tr>
                 <tr>
                     <th>Số tầng hầm</th>
