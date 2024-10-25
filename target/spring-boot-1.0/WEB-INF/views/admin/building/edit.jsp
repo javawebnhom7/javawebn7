@@ -18,7 +18,7 @@
             <ul class="breadcrumb">
                 <li>
                     <i class="ace-icon fa fa-home home-icon"></i>
-                    <a href="#">Home</a>
+                    <a href="/admin/home">Home</a>
                 </li>
                 <li class="active">Danh sách tòa nhà</li>
             </ul><!-- /.breadcrumb -->
@@ -31,7 +31,7 @@
 
             <div class="page-header">
                 <h1 style="font-family: 'Times New Roman', Times, serif;">
-                    Sửa hoặc thêm tòa nhà
+                    Sửa hoặc thêm tòa nhà (Vui lòng điền đủ thông tin)
 
                 </h1>
             </div><!-- /.page-header -->
@@ -84,9 +84,15 @@
 <%--                                </div>--%>
 <%--                            </div>--%>
                             <div class="form-group">
-                                <label class="col-xs-2">Số tầng hầm</label>
+                                <label class="col-xs-2">Tổng số tầng</label>
                                 <div class="col-xs-10">
-                                    <form:input class="form-control" path="numberOfBasement"/>
+                                    <form:input class="form-control" path="numberFloor"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-xs-2">Chung cư ở tầng</label>
+                                <div class="col-xs-10">
+                                    <form:input class="form-control" path="floor"/>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -119,12 +125,7 @@
                                     <form:input class="form-control" path="rentPrice"/>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label class="col-xs-2">Mô tả giá</label>
-                                <div class="col-xs-10">
-                                    <form:input class="form-control" path="rentPriceDescription"/>
-                                </div>
-                            </div>
+
                             <div class="form-group">
                                 <label class="col-xs-2">Dịch vụ phí</label>
                                 <div class="col-xs-10">
@@ -148,18 +149,8 @@
                                     <form:input class="form-control" path="deposit"/>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label class="col-xs-2">Thanh toán</label>
-                                <div class="col-xs-10">
-                                    <form:input class="form-control" path="payment"/>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-xs-2">Thời hạn thuê</label>
-                                <div class="col-xs-10">
-                                    <form:input class="form-control" path="rentTime"/>
-                                </div>
-                            </div>
+
+
                             <div class="form-group">
                                 <label class="col-xs-2">Tên quản lý</label>
                                 <div class="col-xs-10">
@@ -202,7 +193,7 @@
                                         </button>
                                     </c:if>
                                     <c:if test="${empty buildingEdit.id}">
-                                        <button type="submit" class="btn btn-primary" id="btnAddOrBuilding"
+                                        <button type="button" class="btn btn-primary" id="btnAddOrBuilding"
                                          style="margin-right: 8px">
                                             Thêm tòa nhà
                                         </button>
@@ -236,11 +227,12 @@
             }
         });
         data['typeCode'] = typeCode;
-        if (typeCode != "") {
+        if (typeCode != "" && data["district"]!= "") {
             addOrUpdateBuilding(data);
             window.location.href = "<c:url value="/admin/building-list"/>";
         } else {
-            window.location.href = "<c:url value="/admin/building-edit?typeCode=require"/>";
+                window.location.href = "<c:url value="/admin/building-edit?thieuthongtin"/>";
+
         }
     });
 

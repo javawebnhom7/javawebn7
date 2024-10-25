@@ -7,34 +7,31 @@ public class BuildingSearchResponse extends AbstractDTO {
 	private Long id;
 	private String name;
 	private String address;
-	private Long numberOfBasement;
+	private Long numberFloor;
+	private Long floor;
 	private String managerName;
 	private String managerPhone;
 	private Long floorArea;
 	private String rentArea;
 	private String emptyArea;
 	private Long rentPrice;
-	private String serviceFee;
-	private Double brokerageFee;
+	private Long serviceFee;
 	private String avatar;
 	private String direction;;
 	private String level;
-	private String carFee;
-	private String motoFee;
-	private String electricFee;
+	private Long carFee;
+	private Long motoFee;
+	private Long electricFee;
 	private String deposit;
-	private String payment;
 	private String rentTime;
 	private String typeCode;
 	private String note;
 
 
-	@Override
 	public Long getId() {
 		return id;
 	}
 
-	@Override
 	public void setId(Long id) {
 		this.id = id;
 	}
@@ -55,12 +52,20 @@ public class BuildingSearchResponse extends AbstractDTO {
 		this.address = address;
 	}
 
-	public Long getNumberOfBasement() {
-		return numberOfBasement;
+	public Long getNumberFloor() {
+		return numberFloor;
 	}
 
-	public void setNumberOfBasement(Long numberOfBasement) {
-		this.numberOfBasement = numberOfBasement;
+	public void setNumberFloor(Long numberFloor) {
+		this.numberFloor = numberFloor;
+	}
+
+	public Long getFloor() {
+		return floor;
+	}
+
+	public void setFloor(Long floor) {
+		this.floor = floor;
 	}
 
 	public String getManagerName() {
@@ -111,20 +116,12 @@ public class BuildingSearchResponse extends AbstractDTO {
 		this.rentPrice = rentPrice;
 	}
 
-	public String getServiceFee() {
+	public Long getServiceFee() {
 		return serviceFee;
 	}
 
-	public void setServiceFee(String serviceFee) {
+	public void setServiceFee(Long serviceFee) {
 		this.serviceFee = serviceFee;
-	}
-
-	public Double getBrokerageFee() {
-		return brokerageFee;
-	}
-
-	public void setBrokerageFee(Double brokerageFee) {
-		this.brokerageFee = brokerageFee;
 	}
 
 	public String getAvatar() {
@@ -151,27 +148,27 @@ public class BuildingSearchResponse extends AbstractDTO {
 		this.level = level;
 	}
 
-	public String getCarFee() {
+	public Long getCarFee() {
 		return carFee;
 	}
 
-	public void setCarFee(String carFee) {
+	public void setCarFee(Long carFee) {
 		this.carFee = carFee;
 	}
 
-	public String getMotoFee() {
+	public Long getMotoFee() {
 		return motoFee;
 	}
 
-	public void setMotoFee(String motoFee) {
+	public void setMotoFee(Long motoFee) {
 		this.motoFee = motoFee;
 	}
 
-	public String getElectricFee() {
+	public Long getElectricFee() {
 		return electricFee;
 	}
 
-	public void setElectricFee(String electricFee) {
+	public void setElectricFee(Long electricFee) {
 		this.electricFee = electricFee;
 	}
 
@@ -181,14 +178,6 @@ public class BuildingSearchResponse extends AbstractDTO {
 
 	public void setDeposit(String deposit) {
 		this.deposit = deposit;
-	}
-
-	public String getPayment() {
-		return payment;
-	}
-
-	public void setPayment(String payment) {
-		this.payment = payment;
 	}
 
 	public String getRentTime() {

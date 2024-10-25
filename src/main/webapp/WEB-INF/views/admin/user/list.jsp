@@ -143,7 +143,7 @@
                                             </fieldset>
                                         </display:column>
                                         <display:column headerClass="text-left" property="userName" title="Tên"/>
-                                        <display:column headerClass="text-left" property="fullName" title="full name"/>
+                                        <display:column headerClass="text-left" property="fullName" title="Fullname"/>
                                         <display:column headerClass="col-actions" title="Thao tác">
                                             <c:if test="${tableList.roleCode != 'MANAGER'}">
                                                 <a class="btn btn-sm btn-primary btn-edit" data-toggle="tooltip"

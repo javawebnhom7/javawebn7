@@ -231,14 +231,14 @@
                         </th>
                         <th>Tên tòa nhà</th>
                         <th>Địa chỉ</th>
-                        <th>Số tầng hầm</th>
+                        <th>Tổng số tầng</th>
+                        <th>Chung cư ở tầng</th>
                         <th>Tên quản lý</th>
                         <th>Số điện thoại quản lý</th>
                         <th>Diện tích sàn</th>
-                        <th>Diện tích trống</th>
                         <th>Diện tích thuê</th>
-                        <th>Phí môi giới</th>
-                        <th>THao tác</th>
+                        <th>Kiểu tòa nhà</th>
+                        <th>Thao tác</th>
 
 
                     </tr>
@@ -257,14 +257,15 @@
 
                             <td>
                                     <a href="/detailbuilding-${item.id}">${item.name}</a>
-                                </td>
+                            </td>
                             <td>${item.address}</td>
-                            <td>${item.numberOfBasement}</td>
+                            <td>${item.numberFloor}</td>
+                            <td>${item.floor}</td>
                             <td>${item.managerName}</td>
                             <td>${item.managerPhone}</td>
                             <td>${item.floorArea}</td>
-                            <td>${item.emptyArea}</td>
                             <td>${item.rentArea}</td>
+                            <td>${item.typeCode}</td>
                             <td>${item.serviceFee}</td>
                             <td>
                                 <div class="hidden-sm hidden-xs btn-group">

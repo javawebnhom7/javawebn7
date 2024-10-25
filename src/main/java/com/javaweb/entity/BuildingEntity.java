@@ -23,14 +23,14 @@ public class BuildingEntity extends BaseEntity {
     @Column(name = "district")
     private String district;
 
-    @Column(name = "structure")
-    private String structure;
+    @Column(name = "numberfloor")
+    private Long numberFloor;
 
-    @Column(name = "numberofbasement")
-    private Integer numberOfBasement;
+    @Column(name = "floor")
+    private Long floor;
 
     @Column(name = "floorarea")
-    private Integer floorArea;
+    private Long floorArea;
 
     @Column(name = "direction")
     private String direction;
@@ -39,37 +39,28 @@ public class BuildingEntity extends BaseEntity {
     private String level;
 
     @Column(name = "rentprice")
-    private Integer rentPrice;
+    private Long rentPrice;
 
     @Column(name = "rentpricedescription")
     private String rentPriceDes;
 
     @Column(name = "servicefee")
-    private String serviceFee;
+    private Long serviceFee;
 
     @Column(name = "carfee")
-    private String carFee;
+    private Long carFee;
 
     @Column(name = "motofee")
-    private String motoFee;
+    private Long motoFee;
 
     @Column(name = "electricityfee")
-    private String electricFee;
+    private Long electricFee;
 
     @Column(name = "deposit")
     private String deposit;
 
-    @Column(name = "payment")
-    private String payment;
-
     @Column(name = "renttime")
     private String rentTime;
-
-    @Column(name = "decorationtime")
-    private String decorTime;
-
-    @Column(name = "brokeragefee")
-    private Integer brokerageFee;
 
     @Column(name = "type")
     private String typeCode;
@@ -89,16 +80,10 @@ public class BuildingEntity extends BaseEntity {
     @OneToMany(mappedBy="building",fetch=FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE},orphanRemoval = true)
     private List<RentAreaEntity> rentAreas= new ArrayList<>();
 
-
-    @ManyToMany(mappedBy = "buildings", fetch = FetchType.LAZY)
-    private List<UserEntity> users = new ArrayList<>();
-
-    @Override
     public Long getId() {
         return id;
     }
 
-    @Override
     public void setId(Long id) {
         this.id = id;
     }
@@ -135,27 +120,27 @@ public class BuildingEntity extends BaseEntity {
         this.district = district;
     }
 
-    public String getStructure() {
-        return structure;
+    public Long getNumberFloor() {
+        return numberFloor;
     }
 
-    public void setStructure(String structure) {
-        this.structure = structure;
+    public void setNumberFloor(Long numberFloor) {
+        this.numberFloor = numberFloor;
     }
 
-    public Integer getNumberOfBasement() {
-        return numberOfBasement;
+    public Long getFloor() {
+        return floor;
     }
 
-    public void setNumberOfBasement(Integer numberOfBasement) {
-        this.numberOfBasement = numberOfBasement;
+    public void setFloor(Long floor) {
+        this.floor = floor;
     }
 
-    public Integer getFloorArea() {
+    public Long getFloorArea() {
         return floorArea;
     }
 
-    public void setFloorArea(Integer floorArea) {
+    public void setFloorArea(Long floorArea) {
         this.floorArea = floorArea;
     }
 
@@ -175,11 +160,11 @@ public class BuildingEntity extends BaseEntity {
         this.level = level;
     }
 
-    public Integer getRentPrice() {
+    public Long getRentPrice() {
         return rentPrice;
     }
 
-    public void setRentPrice(Integer rentPrice) {
+    public void setRentPrice(Long rentPrice) {
         this.rentPrice = rentPrice;
     }
 
@@ -191,35 +176,35 @@ public class BuildingEntity extends BaseEntity {
         this.rentPriceDes = rentPriceDes;
     }
 
-    public String getServiceFee() {
+    public Long getServiceFee() {
         return serviceFee;
     }
 
-    public void setServiceFee(String serviceFee) {
+    public void setServiceFee(Long serviceFee) {
         this.serviceFee = serviceFee;
     }
 
-    public String getCarFee() {
+    public Long getCarFee() {
         return carFee;
     }
 
-    public void setCarFee(String carFee) {
+    public void setCarFee(Long carFee) {
         this.carFee = carFee;
     }
 
-    public String getMotoFee() {
+    public Long getMotoFee() {
         return motoFee;
     }
 
-    public void setMotoFee(String motoFee) {
+    public void setMotoFee(Long motoFee) {
         this.motoFee = motoFee;
     }
 
-    public String getElectricFee() {
+    public Long getElectricFee() {
         return electricFee;
     }
 
-    public void setElectricFee(String electricFee) {
+    public void setElectricFee(Long electricFee) {
         this.electricFee = electricFee;
     }
 
@@ -231,36 +216,12 @@ public class BuildingEntity extends BaseEntity {
         this.deposit = deposit;
     }
 
-    public String getPayment() {
-        return payment;
-    }
-
-    public void setPayment(String payment) {
-        this.payment = payment;
-    }
-
     public String getRentTime() {
         return rentTime;
     }
 
     public void setRentTime(String rentTime) {
         this.rentTime = rentTime;
-    }
-
-    public String getDecorTime() {
-        return decorTime;
-    }
-
-    public void setDecorTime(String decorTime) {
-        this.decorTime = decorTime;
-    }
-
-    public Integer getBrokerageFee() {
-        return brokerageFee;
-    }
-
-    public void setBrokerageFee(Integer brokerageFee) {
-        this.brokerageFee = brokerageFee;
     }
 
     public String getTypeCode() {
@@ -295,29 +256,19 @@ public class BuildingEntity extends BaseEntity {
         this.managerPhone = managerPhone;
     }
 
-
-
-    public List<UserEntity> getUsers() {
-        return users;
-    }
-
-    public void setUsers(List<UserEntity> users) {
-        this.users = users;
-    }
-
-    public List<RentAreaEntity> getRentAreas() {
-        return rentAreas;
-    }
-
-    public void setRentAreas(List<RentAreaEntity> rentAreas) {
-        this.rentAreas = rentAreas;
-    }
-
     public String getAvatar() {
         return avatar;
     }
 
     public void setAvatar(String avatar) {
         this.avatar = avatar;
+    }
+
+    public List<com.javaweb.entity.RentAreaEntity> getRentAreas() {
+        return rentAreas;
+    }
+
+    public void setRentAreas(List<com.javaweb.entity.RentAreaEntity> rentAreas) {
+        this.rentAreas = rentAreas;
     }
 }

@@ -35,17 +35,21 @@ public class UserEntity extends BaseEntity {
             inverseJoinColumns = @JoinColumn(name = "role_id", nullable = false))
     private List<RoleEntity> roles = new ArrayList<>();
 
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(name = "assignmentbuilding",
-            joinColumns = @JoinColumn(name = "userid", nullable = false),
-            inverseJoinColumns = @JoinColumn(name = "buildingid", nullable = false))
-    private List<BuildingEntity> buildings = new ArrayList<>();
+
 
 
     public static long getSerialVersionUID() {
         return serialVersionUID;
     }
 
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getUserName() {
         return userName;
@@ -79,14 +83,6 @@ public class UserEntity extends BaseEntity {
         this.status = status;
     }
 
-    public List<RoleEntity> getRoles() {
-        return roles;
-    }
-
-    public void setRoles(List<RoleEntity> roles) {
-        this.roles = roles;
-    }
-
     public String getEmail() {
         return email;
     }
@@ -95,21 +91,11 @@ public class UserEntity extends BaseEntity {
         this.email = email;
     }
 
-    @Override
-    public Long getId() {
-        return id;
+    public List<com.javaweb.entity.RoleEntity> getRoles() {
+        return roles;
     }
 
-    @Override
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public List<BuildingEntity> getBuildings() {
-        return buildings;
-    }
-
-    public void setBuildings(List<BuildingEntity> buildings) {
-        this.buildings = buildings;
+    public void setRoles(List<com.javaweb.entity.RoleEntity> roles) {
+        this.roles = roles;
     }
 }

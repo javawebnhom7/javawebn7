@@ -29,8 +29,12 @@
                             <td>Đường ${building.address}</td>
                         </tr>
                         <tr>
-                            <th>Số tầng hầm :</th>
-                            <td>${building.numberOfBasement}</td>
+                            <th>Tổng số tầng :</th>
+                            <td>${building.numberFloor}</td>
+                        </tr>
+                        <tr>
+                            <th>Chung cư ở tầng :</th>
+                            <td>${building.floor}</td>
                         </tr>
                         <tr>
                             <th>Diện tích sàn :</th>
@@ -46,32 +50,29 @@
                         </tr>
                         <tr>
                             <th>Giá thuê :</th>
-                            <td>${building.rentPrice}đ</td>
+                            <td>${building.rentPrice} đ/tháng</td>
                         </tr>
                         <tr>
                             <th>Phí dịch vụ :</th>
-                            <td>${building.serviceFee}</td>
+                            <td>${building.serviceFee} đ/tháng</td>
                         </tr>
                         <tr>
                             <th>Phí gửi ôtô :</th>
-                            <td>${building.carFee}</td>
+                            <td>${building.carFee} đ/tháng</td>
                         </tr>
                         <tr>
                             <th>Phí gửi xe máy :</th>
-                            <td>${building.motoFee}</td>
+                            <td>${building.motoFee} đ/tháng</td>
                         </tr>
                         <tr>
                             <th>Giá điện :</th>
-                            <td>${building.electricFee}</td>
+                            <td>${building.electricFee} đ/tháng</td>
                         </tr>
                         <tr>
                             <th>Đặt cọc trước :</th>
                             <td>${building.deposit}</td>
                         </tr>
-                        <tr>
-                            <th>Chu kỳ đóng :</th>
-                            <td>${building.payment}</td>
-                        </tr>
+
                         <tr>
                             <th>Thời gian thuê :</th>
                             <td>${building.rentTime}</td>
