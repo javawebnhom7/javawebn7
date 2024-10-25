@@ -23,7 +23,7 @@
             <ul class="breadcrumb">
                 <li>
                     <i class="ace-icon fa fa-home home-icon"></i>
-                    <a href="#">Home</a>
+                    <a href="/admin/home">Trang chủ</a>
                 </li>
                 <li class="active">Danh sách tòa nhà</li>
             </ul><!-- /.breadcrumb -->
@@ -70,12 +70,12 @@
                                                 <div class="col-xs-6">
                                                     <label class="name">Tên tòa nhà </label>
                                                         <%--                                                    <input type="text" class="form-control" name="name" value="${modelSearch.name}">--%>
-                                                    <form:input class="form-control" path="name"></form:input>
+                                                    <form:input class="form-control" path="name"/>
                                                 </div>
                                                 <div class="col-xs-6">
                                                     <label class="name">Diện tích sàn</label>
                                                         <%--                                                    <input type="number" class="form-control" name="floorarea" value="">--%>
-                                                    <form:input class="form-control" path="floorArea"></form:input>
+                                                    <form:input class="form-control" path="floorArea"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -102,8 +102,8 @@
                                         <div class="form-group">
                                             <div class="col-xs-12">
                                                 <div class="col-xs-4">
-                                                    <label class="name">Số tầng hầm</label>
-                                                   <form:input class="form-control" path="numberOfBasement"/>
+                                                    <label class="name">Tổng số tầng </label>
+                                                   <form:input class="form-control" path="numberFloor"/>
                                                 </div>
                                                 <div class="col-xs-4">
                                                     <label class="name">Hướng</label>
@@ -238,6 +238,7 @@
                         <th>Diện tích sàn</th>
                         <th>Diện tích thuê</th>
                         <th>Kiểu tòa nhà</th>
+                        <th>Dịch vụ phí</th>
                         <th>Thao tác</th>
 
 

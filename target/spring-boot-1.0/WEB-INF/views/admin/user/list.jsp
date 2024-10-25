@@ -30,12 +30,10 @@
                     <li>
                         <i class="ace-icon fa fa-home home-icon"></i>
                         <a href="<c:url value="/admin/home"/>">
-                                <%--<spring:message code="label.home"/>--%>
                             Trang chủ
                         </a>
                     </li>
                     <li class="active">
-                            <%--<spring:message code="label.user.list"/>--%>
                         Danh sách người dùng
                     </li>
                 </ul>
@@ -132,7 +130,7 @@
                                                    id="tableList" pagesize="${model.maxPageItems}"
                                                    export="false"
                                                    class="table table-fcv-ace table-striped table-bordered table-hover dataTable no-footer"
-                                                   style="margin: 3em 0 1.5em;">
+                                                   style="margin: 3em 0 1.5em; box-shadow:rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px">
                                         <display:column title="<fieldset class='form-group'>
 												        <input type='checkbox' id='checkAll' class='check-box-element'>
 												        </fieldset>" class="center select-cell"
@@ -142,8 +140,8 @@
                                                        id="checkbox_${tableList.id}" class="check-box-element"/>
                                             </fieldset>
                                         </display:column>
-                                        <display:column headerClass="text-left" property="userName" title="Tên"/>
-                                        <display:column headerClass="text-left" property="fullName" title="Fullname"/>
+                                        <display:column headerClass="text-left" property="userName" title="Tên đăng nhập"/>
+                                        <display:column headerClass="text-left" property="fullName" title="Tên đầy đủ"/>
                                         <display:column headerClass="col-actions" title="Thao tác">
                                             <c:if test="${tableList.roleCode != 'MANAGER'}">
                                                 <a class="btn btn-sm btn-primary btn-edit" data-toggle="tooltip"
@@ -152,8 +150,9 @@
                                                     <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                                 </a>
                                             </c:if>
+
                                             <c:if test="${tableList.roleCode == 'MANAGER'}">
-                                                <p>Không đươc thao tác</p>
+                                                <p>Không được thao tác</p>
                                             </c:if>
                                         </display:column>
                                     </display:table>

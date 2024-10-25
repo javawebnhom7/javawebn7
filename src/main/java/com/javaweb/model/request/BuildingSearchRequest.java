@@ -10,7 +10,7 @@ public class BuildingSearchRequest extends AbstractDTO {
     private String district;
     private String ward;
     private String street;
-    private Long numberOfBasement;
+    private Long numberFloor;
     private String direction;
     private Long level;
     private Long areaFrom;
@@ -39,12 +39,12 @@ public class BuildingSearchRequest extends AbstractDTO {
         this.floorArea = floorArea;
     }
 
-    public Long getNumberOfBasement() {
-        return numberOfBasement;
+    public Long getNumberFloor() {
+        return numberFloor;
     }
 
-    public void setNumberOfBasement(Long numberOfBasement) {
-        this.numberOfBasement = numberOfBasement;
+    public void setNumberFloor(Long numberOfBasement) {
+        this.numberFloor = numberOfBasement;
     }
 
     public List<String> getTypeCode() {

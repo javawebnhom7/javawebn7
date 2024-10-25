@@ -272,3 +272,8 @@
     transform: translateY(-2px);
 }
 
+.form-group{
+    justify-content: center;
+    margin-bottom: 0;
+    padding : 10px 0;
+}

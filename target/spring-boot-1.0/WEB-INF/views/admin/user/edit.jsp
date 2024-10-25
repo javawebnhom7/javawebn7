@@ -17,7 +17,7 @@
             <ul class="breadcrumb">
                 <li>
                     <i class="ace-icon fa fa-home home-icon"></i>
-                    <a href="#">Trang chủ</a>
+                    <a href="/admin/home">Trang chủ</a>
                 </li>
                 <li class="active">Chỉnh sửa người dùng</li>
             </ul><!-- /.breadcrumb -->
@@ -61,7 +61,6 @@
                         <div class="space-4"></div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label no-padding-right">
-                                <%--<spring:message code="label.fullname"/>--%>
                                 Tên đầy đủ
                             </label>
                             <div class="col-sm-9">
@@ -71,11 +70,11 @@
                         <div class="space-4"></div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label no-padding-right">
-                                <%--<spring:message code="label.username"/>--%> Mật khẩu
+                                Mật khẩu
                             </label>
                             <div class="col-sm-9">
                                 <c:if test="${not empty model.id}">
-                                    <form:input path="password" id="userName" cssClass="form-control" type="password"/>
+                                    <form:input path="password" id="userName" disabled="true" cssClass="form-control" type="password"/>
                                 </c:if>
                                 <c:if test="${empty model.id}">
                                     <form:input path="password" id="userName" cssClass="form-control" type="password"/>

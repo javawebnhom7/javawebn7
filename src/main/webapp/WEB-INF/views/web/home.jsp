@@ -55,7 +55,7 @@
                     <div class="col-12 col-md-2">
                         <div class="search-item">
 
-                            <form:input class="search-option" path="areaTo" placeholder="Diện tích thuê từ..."/>
+                            <form:input class="search-option" path="areaTo" placeholder="Diện tích thuê từ..." style="color: #fff;"/>
 
                         </div>
                     </div>
@@ -63,7 +63,7 @@
                     <div class="col-12 col-md-1">
                         <div class="search-btn">
                             <button class="inner-login">
-                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <i class="fa-solid fa-magnifying-glass" style="font-size: 12px"></i>
                             </button>
                         </div>
                     </div>
@@ -95,7 +95,7 @@
                                         <div class="product1-image new"></div>
                                         <div class="product1-conntent">
                                             <div class="product1-conntent-header">
-                                                <a href="">${item.name}</a>
+                                                <a href="/detailbuilding-${item.id}">${item.name}</a>
                                             </div>
                                             <ul class="product1-conntent-list">
                                                 <li class="product1-conntent-item">
@@ -116,8 +116,9 @@
                                         </div>
                                         <div class="product1-footer">
                                             <span class="product1-footer-cost">${item.rentPrice}</span>
-                                            <button class="inner-login" ><a href="detailbuilding-${item.id}">
-                                            Xem chi tiết</a></button>
+                                            <a href="detailbuilding-${item.id}">
+                                                <button class="inner-login" >Xem chi tiết</button>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>

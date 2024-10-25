@@ -18,7 +18,7 @@
             <ul class="breadcrumb">
                 <li>
                     <i class="ace-icon fa fa-home home-icon"></i>
-                    <a href="/admin/home">Home</a>
+                    <a href="/admin/home"> Trang chủ </a>
                 </li>
                 <li class="active">Danh sách tòa nhà</li>
             </ul><!-- /.breadcrumb -->
