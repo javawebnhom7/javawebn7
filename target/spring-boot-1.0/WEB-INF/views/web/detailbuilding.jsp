@@ -10,7 +10,7 @@
 <head>
 </head>
 <body>
-    <div class="detail" style="background: #7db5ffcc">
+    <div class="detail" style="background: #c8defccf">
         <div class="container" style="background-color: #f5f5f56e; padding: 60px">
             <h2 style="font-family: Courier, monospace; border-bottom: solid 2px black; text-transform: capitalize">${building.name}</h2>
             <br>

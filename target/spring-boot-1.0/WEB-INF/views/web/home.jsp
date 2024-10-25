@@ -16,7 +16,7 @@
 <div class="blurred-box">
 
 <div class="page-wrapper" style="
-    background: #7db5ffcc;
+    background: #c8defccf;
 ">
     <div class="">
         <%--  SEARCH--%>
@@ -55,7 +55,7 @@
                     <div class="col-12 col-md-2">
                         <div class="search-item">
 
-                            <form:input class="search-option" path="rentPriceFrom" placeholder="Diện tích thuê từ"/>
+                            <form:input class="search-option" path="areaTo" placeholder="Diện tích thuê từ..."/>
 
                         </div>
                     </div>
@@ -105,11 +105,13 @@
 
                                                 <li class="product1-conntent-item">
                                                     <i class="fa-solid fa-warehouse"></i>
-                                                    <span>${item.floorArea} m2</span>
+                                                    <span>${item.rentArea} m2</span>
+
+                                                </li>
+                                                <li class="product1-conntent-item">
                                                     <i class="fa-solid fa-user-gear"></i>
                                                     <span>${item.managerName}</span>
-                                                </li>
-
+                                                 </li>
                                             </ul>
                                         </div>
                                         <div class="product1-footer">
