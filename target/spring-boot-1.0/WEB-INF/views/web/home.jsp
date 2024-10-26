@@ -137,9 +137,9 @@
                         <p class = "desc-logo-footer mt-3 inner-nhom7">Nhóm 7 : JAVA </p>
                         <p class="desc-logo-footer mt-3">Các thành viên:</p>
                         <p class="desc-logo-footer mt-3">Hoàng Khánh Văn - B22DCKH131</p>
-                        <p class="desc-logo-footer mt-3">Nguyễn Hữu Trường - B22DCKH131</p>
-                        <p class="desc-logo-footer mt-3">Lê Văn Thọ - B22DCKH131</p>
-                        <p class="desc-logo-footer mt-3">Nguyễn Thành Trung - B22DCKH131</p>
+                        <p class="desc-logo-footer mt-3">Nguyễn Hữu Trường - B22DCKH129</p>
+                        <p class="desc-logo-footer mt-3">Lê Văn Thọ - B22DCKH121</p>
+                        <p class="desc-logo-footer mt-3">Nguyễn Thành Trung - B22DCKH125</p>
                     </div>
                     <div class="text-center">
                         <div class="border-bottom mb-5 mt-4"></div>

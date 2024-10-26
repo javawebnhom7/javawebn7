@@ -214,6 +214,26 @@
         </div><!-- /.page-content -->
     </div>
 </div><!-- /.main-content -->
+
+<!-- Modal -->
+<div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style=font-size:20px;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Thông báo</h5>
+
+            </div>
+            <div class="modal-body">
+                Vui lòng nhập đầy đủ thông tin !!!
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <script>
     $('#btnAddOrBuilding').click(function () {
         var data = {}
@@ -231,7 +251,8 @@
             addOrUpdateBuilding(data);
             window.location.href = "<c:url value="/admin/building-list"/>";
         } else {
-                window.location.href = "<c:url value="/admin/building-edit?thieuthongtin"/>";
+            $('#infoModal').modal('show');
+
 
         }
     });

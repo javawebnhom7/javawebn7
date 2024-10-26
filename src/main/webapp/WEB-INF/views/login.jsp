@@ -50,7 +50,7 @@
 					</label></div>
 				</div>
 
-				<p class="foot-lnk"><a class="text-white-50" href="#!">Forgot password?</a></p>
+
 				<div class="group" style="display: flex; justify-content: center">
 				<button type="submit" class="button6" >
 					<span>Đăng nhập</span>
