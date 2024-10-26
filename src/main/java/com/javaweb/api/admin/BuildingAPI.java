@@ -22,14 +22,7 @@ public class BuildingAPI {
     private BuildingDTOtoEntityConverter buildingDTOtoEntityConverter;
     @PostMapping
     public void addOrUpdateBuilding(@RequestBody BuildingDTO buildingDTO){
-        if(buildingDTO.getId()==null){
-            BuildingEntity buildingEntity=buildingDTOtoEntityConverter.toBuildingEntity(buildingDTO);
-            buildingRepository.save(buildingEntity);
-        } else {
-            BuildingEntity buildingEntity = buildingRepository.findById(buildingDTO.getId()).get();
-            buildingEntity = buildingDTOtoEntityConverter.toBuildingEntity(buildingDTO);
-            buildingRepository.save(buildingEntity);
-        }
+        buildingService.addOrUpdateBulding(buildingDTO);
     }
     @DeleteMapping("/{ids}")
     public void deleteBuilding(@PathVariable List<Long> ids){

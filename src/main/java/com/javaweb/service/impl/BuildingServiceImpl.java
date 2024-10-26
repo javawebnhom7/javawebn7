@@ -1,8 +1,10 @@
 package com.javaweb.service.impl;
 
+import com.javaweb.converter.BuildingDTOtoEntityConverter;
 import com.javaweb.converter.BuildingSearchResponseConverter;
 import com.javaweb.entity.BuildingEntity;
 import com.javaweb.entity.UserEntity;
+import com.javaweb.model.dto.BuildingDTO;
 import com.javaweb.model.request.BuildingSearchRequest;
 import com.javaweb.model.response.BuildingSearchResponse;
 
@@ -28,6 +30,8 @@ public class BuildingServiceImpl implements BuildingService {
     @Autowired
     private RentAreaService rentAreaService;
 
+    @Autowired
+    private BuildingDTOtoEntityConverter buildingDTOtoEntityConverter;
     @Override
     public List<BuildingSearchResponse> findAll(BuildingSearchRequest buildingSearchRequest) {
         List<BuildingEntity> buildingEntities = buildingRepository.findAll(buildingSearchRequest);
@@ -45,6 +49,18 @@ public class BuildingServiceImpl implements BuildingService {
 
         for(Long id : ids){
             buildingRepository.deleteById(id);
+        }
+    }
+
+    @Override
+    public void addOrUpdateBulding(BuildingDTO buildingDTO) {
+        if(buildingDTO.getId()==null){
+            BuildingEntity buildingEntity=buildingDTOtoEntityConverter.toBuildingEntity(buildingDTO);
+            buildingRepository.save(buildingEntity);
+        } else {
+            BuildingEntity buildingEntity = buildingRepository.findById(buildingDTO.getId()).get();
+            buildingEntity = buildingDTOtoEntityConverter.toBuildingEntity(buildingDTO);
+            buildingRepository.save(buildingEntity);
         }
     }
 
