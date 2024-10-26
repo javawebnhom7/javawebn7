@@ -264,10 +264,10 @@
                             <td>${item.floor}</td>
                             <td>${item.managerName}</td>
                             <td>${item.managerPhone}</td>
-                            <td>${item.floorArea}</td>
-                            <td>${item.rentArea}</td>
+                            <td>${item.floorArea} m2</td>
+                            <td>${item.rentArea} m2</td>
                             <td>${item.typeCode}</td>
-                            <td>${item.serviceFee}</td>
+                            <td>${item.serviceFee} đồng</td>
                             <td>
                                 <div class="hidden-sm hidden-xs btn-group">
 

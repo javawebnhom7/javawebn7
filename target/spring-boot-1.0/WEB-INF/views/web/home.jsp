@@ -55,7 +55,7 @@
                     <div class="col-12 col-md-2">
                         <div class="search-item">
 
-                            <form:input class="search-option" path="areaTo" placeholder="Diện tích thuê từ..." style="color: #fff;"/>
+                            <form:input class="search-option" path="areaFrom" placeholder="Diện tích thuê từ..." style="color: #fff;"/>
 
                         </div>
                     </div>
@@ -106,16 +106,14 @@
                                                 <li class="product1-conntent-item">
                                                     <i class="fa-solid fa-warehouse"></i>
                                                     <span>${item.rentArea} m2</span>
-
-                                                </li>
-                                                <li class="product1-conntent-item">
                                                     <i class="fa-solid fa-user-gear"></i>
                                                     <span>${item.managerName}</span>
-                                                 </li>
+                                                </li>
+
                                             </ul>
                                         </div>
                                         <div class="product1-footer">
-                                            <span class="product1-footer-cost">${item.rentPrice}</span>
+                                            <span class="product1-footer-cost">${item.rentPrice} đ/tháng</span>
                                             <a href="detailbuilding-${item.id}">
                                                 <button class="inner-login" >Xem chi tiết</button>
                                             </a>

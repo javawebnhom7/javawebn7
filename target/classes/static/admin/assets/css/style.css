@@ -277,3 +277,13 @@
     margin-bottom: 0;
     padding : 10px 0;
 }
+.form-distrists{
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+    padding : 10px 0;
+}
+.form-distrists .col-xs-2{
+    display: flex;
+    justify-content: center;
+}

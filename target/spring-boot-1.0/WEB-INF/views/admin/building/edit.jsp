@@ -54,7 +54,7 @@
                                 </div>
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-distrists">
                                 <label class="col-xs-2">Quận</label>
                                 <div class="col-xs-3">
 

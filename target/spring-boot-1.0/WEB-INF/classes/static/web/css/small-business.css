@@ -190,6 +190,7 @@ input::placeholder {
 
 .content {
   padding: 3rem 0 2rem;
+  min-height: 350px;
 }
 
 .title-cover {
@@ -289,7 +290,7 @@ input::placeholder {
 
 .product1-footer-cost {
   color: #f3375b;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-weight: 700;
   cursor: default;
 
@@ -374,16 +375,7 @@ input::placeholder {
   max-width: 100%;
   height: auto;
 }
-/* .section_why .wrap .wrap_itemp .content_p {
-    display: block;
-    float: left;
-    width: calc(100% - 42px - 30px);
-    -webkit-width: calc(100% - 42px - 30px);
-    -moz-width: calc(100% - 42px - 30px);
-    -o-width: calc(100% - 42px - 30px);
-    -os-width: calc(100% - 42px - 30px);
-    margin-left: 30px;
-} */
+
 
 .content_p {
   margin-left: 30px;
