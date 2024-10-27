@@ -35,15 +35,7 @@
                     </c:if>
                     <form:form id="formEdit" class="form-horizontal" modelAttribute="model">
                     <div id="profile">
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label no-padding-right">Vai trò</label>
-                            <div class="col-sm-9">
-                                <form:select path="roleCode" id="roleCode">
-                                    <form:option value="" label="--- Chọn vai trò ---"/>
-                                    <form:options items="${model.roleDTOs}"/>
-                                </form:select>
-                            </div>
-                        </div>
+
                         <div class="space-4"></div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label no-padding-right">
