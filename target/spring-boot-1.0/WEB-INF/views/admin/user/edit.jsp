@@ -17,7 +17,7 @@
             <ul class="breadcrumb">
                 <li>
                     <i class="ace-icon fa fa-home home-icon"></i>
-                    <a href="/admin/home">Trang chủ</a>
+                    <a href="#">Trang chủ</a>
                 </li>
                 <li class="active">Chỉnh sửa người dùng</li>
             </ul><!-- /.breadcrumb -->
@@ -35,7 +35,15 @@
                     </c:if>
                     <form:form id="formEdit" class="form-horizontal" modelAttribute="model">
                     <div id="profile">
-
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">Vai trò</label>
+                            <div class="col-sm-9">
+                                <form:select path="roleCode" id="roleCode">
+                                    <form:option value="" label="--- Chọn vai trò ---"/>
+                                    <form:options items="${model.roleDTOs}"/>
+                                </form:select>
+                            </div>
+                        </div>
                         <div class="space-4"></div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label no-padding-right">
@@ -53,6 +61,7 @@
                         <div class="space-4"></div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label no-padding-right">
+                                <%--<spring:message code="label.fullname"/>--%>
                                 Tên đầy đủ
                             </label>
                             <div class="col-sm-9">
@@ -62,11 +71,11 @@
                         <div class="space-4"></div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label no-padding-right">
-                                Mật khẩu
+                                <%--<spring:message code="label.username"/>--%> Mật khẩu
                             </label>
                             <div class="col-sm-9">
                                 <c:if test="${not empty model.id}">
-                                    <form:input path="password" id="userName" disabled="true" cssClass="form-control" type="password"/>
+                                    <form:input path="password" id="userName" cssClass="form-control" type="password"/>
                                 </c:if>
                                 <c:if test="${empty model.id}">
                                     <form:input path="password" id="userName" cssClass="form-control" type="password"/>
