@@ -92,7 +92,9 @@
                             <c:forEach var="item" items="${buildingList}">
                                 <div class="col-12 col-md-4">
                                     <div class="product1 ">
-                                        <div class="product1-image new"></div>
+                                        <div class="new" style="background: url(${item.avatar}) center / cover no-repeat;
+                                                                                                 width:100%;
+                                                                                                 height: 12rem;"></div>
                                         <div class="product1-conntent">
                                             <div class="product1-conntent-header">
                                                 <a href="/detailbuilding-${item.id}">${item.name}</a>

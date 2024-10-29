@@ -47,7 +47,7 @@
                         <div class="space-4"></div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label no-padding-right">
-                                <%--<spring:message code="label.username"/>--%> Tên đăng nhập
+                                    <%--<spring:message code="label.username"/>--%> Tên đăng nhập
                             </label>
                             <div class="col-sm-9">
                                 <c:if test="${not empty model.id}">
@@ -61,7 +61,7 @@
                         <div class="space-4"></div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label no-padding-right">
-                                <%--<spring:message code="label.fullname"/>--%>
+                                    <%--<spring:message code="label.fullname"/>--%>
                                 Tên đầy đủ
                             </label>
                             <div class="col-sm-9">
@@ -71,7 +71,7 @@
                         <div class="space-4"></div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label no-padding-right">
-                                <%--<spring:message code="label.username"/>--%> Mật khẩu
+                                    <%--<spring:message code="label.username"/>--%> Mật khẩu
                             </label>
                             <div class="col-sm-9">
                                 <c:if test="${not empty model.id}">
