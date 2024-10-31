@@ -107,7 +107,7 @@
 
                                                 <li class="product1-conntent-item">
                                                     <i class="fa-solid fa-warehouse"></i>
-                                                    <span>${item.floorArea} m2</span>
+                                                    <span>${item.rentArea} m2</span>
                                                     <i class="fa-solid fa-user-gear"></i>
                                                     <span>${item.managerName}</span>
                                                 </li>
