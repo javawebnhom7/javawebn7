@@ -27,7 +27,7 @@
                             <td>${building.numberFloor}</td>
                         </tr>
                         <tr>
-                            <th>Chung cư ở tầng :</th>
+                            <th>Tòa ở tầng :</th>
                             <td>${building.floor}</td>
                         </tr>
                         <tr>
@@ -55,7 +55,7 @@
                             <td>${building.carFee} đ/tháng</td>
                         </tr>
                         <tr>
-                            <th>Phí gửi xe máy :</th>
+                            <th>Phí xe máy :</th>
                             <td>${building.motoFee} đ/tháng</td>
                         </tr>
                         <tr>
@@ -67,10 +67,7 @@
                             <td>${building.deposit}</td>
                         </tr>
 
-                        <tr>
-                            <th>Thời gian thuê :</th>
-                            <td>${building.rentTime}</td>
-                        </tr>
+
                         <tr>
                             <th>Loại toà nhà :</th>
                             <td>${building.typeCode}</td>
